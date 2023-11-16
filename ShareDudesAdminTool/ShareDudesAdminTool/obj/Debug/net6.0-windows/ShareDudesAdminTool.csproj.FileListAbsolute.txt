@@ -1,0 +1,17 @@
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\ShareDudesAdminTool.exe
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\ShareDudesAdminTool.deps.json
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\ShareDudesAdminTool.runtimeconfig.json
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\ShareDudesAdminTool.dll
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\ShareDudesAdminTool.pdb
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.csproj.AssemblyReference.cache
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.Login.resources
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.csproj.GenerateResource.cache
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.AssemblyInfoInputs.cache
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.AssemblyInfo.cs
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.csproj.CoreCompileInputs.cache
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.dll
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\refint\ShareDudesAdminTool.dll
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.pdb
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.genruntimeconfig.cache
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ref\ShareDudesAdminTool.dll
