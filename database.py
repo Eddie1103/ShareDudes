@@ -4,7 +4,7 @@ from config import config
 
 class Database:
     
-    DATABASE = psycopg2._T_conn
+    DATABASE = psycopg2.connect
 
     def create():
         db = Database
