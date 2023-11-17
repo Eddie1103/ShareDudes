@@ -46,7 +46,7 @@ class Database:
         return None
 
     def createUser(values):
-        sqlcommand = f'insert into users(name, alter, passwort) VALUES({values})'
+        sqlcommand = f'insert into users(name, alter, passwort) VALUES({values});'
         #hier execute und bool zurückgeben, ob erfolgreich, oder nicht
         return None
         

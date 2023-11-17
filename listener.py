@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import psycopg2
 from database import Database
 from flask import Flask, request, jsonify
@@ -19,9 +20,7 @@ def request_database():
         values = request.args.get('values')
         return jsonify({"result": DATABASE.createUser(values)})
     else:
-        return jsonify({"error": "coming soon"}), 403
-
-
+        return jsonify({"error": "function not found"}), 403
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
