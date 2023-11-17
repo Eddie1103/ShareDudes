@@ -3,8 +3,15 @@ import psycopg2
 from config import config
 
 class Database:
-    _connection = None
+    
+    DATABASE = psycopg2._T_conn
+
     def create():
+        db = Database
+        db.DATABASE =db.connect() 
+        return db
+
+    def connect():
         """ Connect to the PostgreSQL database server """
         conn = None
         try:
@@ -29,4 +36,17 @@ class Database:
         except (Exception, psycopg2.DatabaseError) as error:
             print(error)
             return None
+        
+        
+    def select(table, condition):
+        sqlcommand = f'select * from users'
+        if condition != None:
+            sqlcommand+=condition + ';'
+            #hier execute command, fetch und return
+        return None
+
+    def createUser(values):
+        sqlcommand = f'insert into users(name, alter, passwort) VALUES({values})'
+        #hier execute und bool zurückgeben, ob erfolgreich, oder nicht
+        return None
         
