@@ -38,15 +38,21 @@ class Database:
             return None
         
         
-    def select(table, condition):
+    def select(self, condition):
         sqlcommand = f'select * from users'
         if condition != None:
             sqlcommand+=condition + ';'
-            #hier execute command, fetch und return
-        return None
 
-    def createUser(values):
+        db=self.DATABASE
+        cur=db.cursor()
+        cur.execute(sqlcommand)
+        return cur.fetchall()
+
+    def createUser(self, values):
         sqlcommand = f'insert into users(name, alter, passwort) VALUES({values});'
-        #hier execute und bool zurückgeben, ob erfolgreich, oder nicht
-        return None
+
+        db=self.DATABASE
+        cur=db.cursor()
+        cur.execute(sqlcommand)
+        return cur.fetchone()
         
