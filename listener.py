@@ -12,12 +12,13 @@ def request_database():
 
     methode = request.args.get('methode')
     
-
     if methode=='getuserinformations':
         condition = request.args.get('values')
+        #condition(where id=2 | where username='Henry')
         return jsonify({"result": DATABASE.select(condition)})
     elif methode =='createuser':
         values = request.args.get('values')
+        #values(name, password, birthdate)
         return jsonify({"result": DATABASE.createUser(values)})
     else:
         return jsonify({"error": "function not found"}), 403

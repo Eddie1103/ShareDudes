@@ -39,7 +39,7 @@ class Database:
         
         
     def select(self, condition):
-        sqlcommand = f'select * from users'
+        sqlcommand = f'select * from users '
         if condition != None:
             sqlcommand+=condition + ';'
 
@@ -49,7 +49,7 @@ class Database:
         return cur.fetchall()
 
     def createUser(self, values):
-        sqlcommand = f'insert into users(name, alter, passwort) VALUES({values});'
+        sqlcommand = f'insert into users(name, password, birthdate) VALUES({values});'
 
         db=self.DATABASE
         cur=db.cursor()
