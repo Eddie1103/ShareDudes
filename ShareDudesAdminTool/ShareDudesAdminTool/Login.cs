@@ -19,11 +19,10 @@ namespace ShareDudesAdminTool
             {
            
             }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            else
+            {
+                MessageBox.Show("Warning!");
+            }
         }
     }
 }

@@ -34,81 +34,72 @@
             this.tb_password = new System.Windows.Forms.TextBox();
             this.lb_benutzer = new System.Windows.Forms.Label();
             this.lb_headline = new System.Windows.Forms.Label();
-            this.lb_sharedudes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tb_benutzer
             // 
-            this.tb_benutzer.Location = new System.Drawing.Point(248, 205);
+            this.tb_benutzer.Location = new System.Drawing.Point(279, 215);
             this.tb_benutzer.Name = "tb_benutzer";
             this.tb_benutzer.PlaceholderText = "Benutzer...";
-            this.tb_benutzer.Size = new System.Drawing.Size(298, 27);
+            this.tb_benutzer.Size = new System.Drawing.Size(335, 28);
             this.tb_benutzer.TabIndex = 1;
             this.tb_benutzer.TextChanged += new System.EventHandler(this.tb_benutzer_TextChanged);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(331, 329);
+            this.button1.Location = new System.Drawing.Point(372, 345);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 29);
+            this.button1.Size = new System.Drawing.Size(155, 30);
             this.button1.TabIndex = 2;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // tb_password
             // 
-            this.tb_password.Location = new System.Drawing.Point(248, 273);
+            this.tb_password.Location = new System.Drawing.Point(279, 287);
             this.tb_password.Name = "tb_password";
             this.tb_password.PasswordChar = '*';
             this.tb_password.PlaceholderText = "Passwort...";
-            this.tb_password.Size = new System.Drawing.Size(298, 27);
+            this.tb_password.Size = new System.Drawing.Size(335, 28);
             this.tb_password.TabIndex = 3;
             this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
             // 
             // lb_benutzer
             // 
             this.lb_benutzer.AutoSize = true;
-            this.lb_benutzer.Location = new System.Drawing.Point(250, 162);
+            this.lb_benutzer.Location = new System.Drawing.Point(281, 170);
             this.lb_benutzer.Name = "lb_benutzer";
-            this.lb_benutzer.Size = new System.Drawing.Size(0, 20);
+            this.lb_benutzer.Size = new System.Drawing.Size(0, 21);
             this.lb_benutzer.TabIndex = 4;
             // 
             // lb_headline
             // 
             this.lb_headline.AutoSize = true;
             this.lb_headline.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lb_headline.Location = new System.Drawing.Point(289, 115);
+            this.lb_headline.Location = new System.Drawing.Point(325, 121);
             this.lb_headline.Name = "lb_headline";
             this.lb_headline.Size = new System.Drawing.Size(220, 37);
             this.lb_headline.TabIndex = 5;
             this.lb_headline.Text = "Admintool Login";
-            this.lb_headline.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lb_sharedudes
-            // 
-            this.lb_sharedudes.AutoSize = true;
-            this.lb_sharedudes.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lb_sharedudes.Location = new System.Drawing.Point(12, 9);
-            this.lb_sharedudes.Name = "lb_sharedudes";
-            this.lb_sharedudes.Size = new System.Drawing.Size(90, 20);
-            this.lb_sharedudes.TabIndex = 6;
-            this.lb_sharedudes.Text = "Sharedudes";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lb_sharedudes);
+            this.ClientSize = new System.Drawing.Size(900, 472);
             this.Controls.Add(this.lb_headline);
             this.Controls.Add(this.lb_benutzer);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tb_benutzer);
+            this.Font = new System.Drawing.Font("Calibri", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MdiChildrenMinimizedAnchorBottom = false;
             this.Name = "Login";
-            this.Text = "Login";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.Text = "Sharedudes";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,6 +111,5 @@
         private TextBox tb_password;
         private Label lb_benutzer;
         private Label lb_headline;
-        private Label lb_sharedudes;
     }
 }
