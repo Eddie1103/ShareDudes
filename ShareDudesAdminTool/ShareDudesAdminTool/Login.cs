@@ -15,9 +15,18 @@ namespace ShareDudesAdminTool
 
         private void tb_password_TextChanged(object sender, EventArgs e)
         {
-            if(tb_benutzer.Text != "")
+
+        }
+
+            private void button1_Click(object sender, EventArgs e)
+        {
+            if (tb_benutzer.Text != "")
             {
-           
+
+               // this.Hide();
+                var homeForm = new Home();
+
+                homeForm.Show();
             }
             else
             {

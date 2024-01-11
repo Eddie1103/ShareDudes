@@ -15,3 +15,4 @@ C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0
 C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.pdb
 C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.genruntimeconfig.cache
 C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ref\ShareDudesAdminTool.dll
+C:\Workspace\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.Home.resources
