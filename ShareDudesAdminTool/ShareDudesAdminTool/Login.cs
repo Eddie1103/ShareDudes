@@ -18,19 +18,19 @@ namespace ShareDudesAdminTool
 
         }
 
-            private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (tb_benutzer.Text != "")
+            if (!String.IsNullOrEmpty(tb_benutzer.Text) && !String.IsNullOrEmpty(tb_password.Text))
             {
 
-               // this.Hide();
+                // this.Hide();
                 var homeForm = new Home();
 
                 homeForm.Show();
             }
             else
             {
-                MessageBox.Show("Warning!");
+                MessageBox.Show("Benutzer und Passwort darf nicht leer sein!");
             }
         }
     }
