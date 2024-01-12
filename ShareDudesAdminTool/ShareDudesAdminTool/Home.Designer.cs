@@ -29,54 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.tc_home = new System.Windows.Forms.TabControl();
-            this.tp_user = new System.Windows.Forms.TabPage();
-            this.tp_posts = new System.Windows.Forms.TabPage();
-            this.tp_reports = new System.Windows.Forms.TabPage();
             this.btn_logout = new System.Windows.Forms.Button();
+            this.tp_reports = new System.Windows.Forms.TabPage();
+            this.tp_posts = new System.Windows.Forms.TabPage();
+            this.tp_user = new System.Windows.Forms.TabPage();
+            this.tb_search = new System.Windows.Forms.TextBox();
+            this.tc_home = new System.Windows.Forms.TabControl();
+            this.tp_user.SuspendLayout();
             this.tc_home.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tc_home
-            // 
-            this.tc_home.Controls.Add(this.tp_user);
-            this.tc_home.Controls.Add(this.tp_posts);
-            this.tc_home.Controls.Add(this.tp_reports);
-            this.tc_home.Location = new System.Drawing.Point(12, 12);
-            this.tc_home.Name = "tc_home";
-            this.tc_home.SelectedIndex = 0;
-            this.tc_home.Size = new System.Drawing.Size(1303, 792);
-            this.tc_home.TabIndex = 0;
-            // 
-            // tp_user
-            // 
-            this.tp_user.Location = new System.Drawing.Point(4, 24);
-            this.tp_user.Name = "tp_user";
-            this.tp_user.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_user.Size = new System.Drawing.Size(1295, 764);
-            this.tp_user.TabIndex = 2;
-            this.tp_user.Text = "User";
-            this.tp_user.UseVisualStyleBackColor = true;
-            // 
-            // tp_posts
-            // 
-            this.tp_posts.Location = new System.Drawing.Point(4, 24);
-            this.tp_posts.Name = "tp_posts";
-            this.tp_posts.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_posts.Size = new System.Drawing.Size(606, 229);
-            this.tp_posts.TabIndex = 0;
-            this.tp_posts.Text = "Posts";
-            this.tp_posts.UseVisualStyleBackColor = true;
-            // 
-            // tp_reports
-            // 
-            this.tp_reports.Location = new System.Drawing.Point(4, 24);
-            this.tp_reports.Name = "tp_reports";
-            this.tp_reports.Padding = new System.Windows.Forms.Padding(3);
-            this.tp_reports.Size = new System.Drawing.Size(606, 229);
-            this.tp_reports.TabIndex = 1;
-            this.tp_reports.Text = "Reports";
-            this.tp_reports.UseVisualStyleBackColor = true;
             // 
             // btn_logout
             // 
@@ -89,6 +50,56 @@
             this.btn_logout.UseVisualStyleBackColor = true;
             this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
+            // tp_reports
+            // 
+            this.tp_reports.Location = new System.Drawing.Point(4, 24);
+            this.tp_reports.Name = "tp_reports";
+            this.tp_reports.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_reports.Size = new System.Drawing.Size(1295, 764);
+            this.tp_reports.TabIndex = 1;
+            this.tp_reports.Text = "Reports";
+            this.tp_reports.UseVisualStyleBackColor = true;
+            // 
+            // tp_posts
+            // 
+            this.tp_posts.Location = new System.Drawing.Point(4, 24);
+            this.tp_posts.Name = "tp_posts";
+            this.tp_posts.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_posts.Size = new System.Drawing.Size(1295, 764);
+            this.tp_posts.TabIndex = 0;
+            this.tp_posts.Text = "Posts";
+            this.tp_posts.UseVisualStyleBackColor = true;
+            // 
+            // tp_user
+            // 
+            this.tp_user.Controls.Add(this.tb_search);
+            this.tp_user.Location = new System.Drawing.Point(4, 24);
+            this.tp_user.Name = "tp_user";
+            this.tp_user.Padding = new System.Windows.Forms.Padding(3);
+            this.tp_user.Size = new System.Drawing.Size(1295, 764);
+            this.tp_user.TabIndex = 2;
+            this.tp_user.Text = "User";
+            this.tp_user.UseVisualStyleBackColor = true;
+            // 
+            // tb_search
+            // 
+            this.tb_search.Location = new System.Drawing.Point(1106, 6);
+            this.tb_search.Name = "tb_search";
+            this.tb_search.PlaceholderText = "Suche...";
+            this.tb_search.Size = new System.Drawing.Size(183, 23);
+            this.tb_search.TabIndex = 0;
+            // 
+            // tc_home
+            // 
+            this.tc_home.Controls.Add(this.tp_user);
+            this.tc_home.Controls.Add(this.tp_posts);
+            this.tc_home.Controls.Add(this.tp_reports);
+            this.tc_home.Location = new System.Drawing.Point(12, 12);
+            this.tc_home.Name = "tc_home";
+            this.tc_home.SelectedIndex = 0;
+            this.tc_home.Size = new System.Drawing.Size(1303, 792);
+            this.tc_home.TabIndex = 0;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -100,17 +111,20 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Home";
             this.Text = "Home";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.tp_user.ResumeLayout(false);
+            this.tp_user.PerformLayout();
             this.tc_home.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private TabControl tc_home;
-        private TabPage tp_posts;
-        private TabPage tp_reports;
-        private TabPage tp_user;
         private Button btn_logout;
+        private TabPage tp_reports;
+        private TabPage tp_posts;
+        private TabPage tp_user;
+        private TabControl tc_home;
+        private TextBox tb_search;
     }
 }
