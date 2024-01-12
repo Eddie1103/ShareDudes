@@ -23,10 +23,14 @@ namespace ShareDudesAdminTool
             if (!String.IsNullOrEmpty(tb_benutzer.Text) && !String.IsNullOrEmpty(tb_password.Text))
             {
 
-                // this.Hide();
-                var homeForm = new Home();
+                // open new Form, in this case "Home and hides the current form"
 
-                homeForm.Show();
+                this.Hide();
+
+                var home = new Home();
+                
+                home.Show();
+                
             }
             else
             {
