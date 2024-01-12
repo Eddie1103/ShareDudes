@@ -33,5 +33,10 @@ namespace ShareDudesAdminTool
                 MessageBox.Show("Benutzer und Passwort darf nicht leer sein!");
             }
         }
+
+        private void lb_headline_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

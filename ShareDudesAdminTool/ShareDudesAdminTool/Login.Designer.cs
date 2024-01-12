@@ -32,23 +32,22 @@
             this.tb_benutzer = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.tb_password = new System.Windows.Forms.TextBox();
-            this.lb_benutzer = new System.Windows.Forms.Label();
             this.lb_headline = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tb_benutzer
             // 
-            this.tb_benutzer.Location = new System.Drawing.Point(279, 215);
+            this.tb_benutzer.Location = new System.Drawing.Point(44, 100);
             this.tb_benutzer.Name = "tb_benutzer";
             this.tb_benutzer.PlaceholderText = "Benutzer...";
-            this.tb_benutzer.Size = new System.Drawing.Size(335, 28);
+            this.tb_benutzer.Size = new System.Drawing.Size(335, 24);
             this.tb_benutzer.TabIndex = 1;
             this.tb_benutzer.TextChanged += new System.EventHandler(this.tb_benutzer_TextChanged);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(372, 345);
+            this.button1.Location = new System.Drawing.Point(137, 211);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 30);
             this.button1.TabIndex = 2;
@@ -58,39 +57,31 @@
             // 
             // tb_password
             // 
-            this.tb_password.Location = new System.Drawing.Point(279, 287);
+            this.tb_password.Location = new System.Drawing.Point(44, 153);
             this.tb_password.Name = "tb_password";
             this.tb_password.PasswordChar = '*';
             this.tb_password.PlaceholderText = "Passwort...";
-            this.tb_password.Size = new System.Drawing.Size(335, 28);
+            this.tb_password.Size = new System.Drawing.Size(335, 24);
             this.tb_password.TabIndex = 3;
             this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
-            // 
-            // lb_benutzer
-            // 
-            this.lb_benutzer.AutoSize = true;
-            this.lb_benutzer.Location = new System.Drawing.Point(281, 170);
-            this.lb_benutzer.Name = "lb_benutzer";
-            this.lb_benutzer.Size = new System.Drawing.Size(0, 21);
-            this.lb_benutzer.TabIndex = 4;
             // 
             // lb_headline
             // 
             this.lb_headline.AutoSize = true;
             this.lb_headline.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lb_headline.Location = new System.Drawing.Point(325, 121);
+            this.lb_headline.Location = new System.Drawing.Point(114, 36);
             this.lb_headline.Name = "lb_headline";
-            this.lb_headline.Size = new System.Drawing.Size(220, 37);
+            this.lb_headline.Size = new System.Drawing.Size(178, 29);
             this.lb_headline.TabIndex = 5;
             this.lb_headline.Text = "Admintool Login";
+            this.lb_headline.Click += new System.EventHandler(this.lb_headline_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 472);
+            this.ClientSize = new System.Drawing.Size(439, 293);
             this.Controls.Add(this.lb_headline);
-            this.Controls.Add(this.lb_benutzer);
             this.Controls.Add(this.tb_password);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.tb_benutzer);
@@ -110,7 +101,6 @@
         private TextBox tb_benutzer;
         private Button button1;
         private TextBox tb_password;
-        private Label lb_benutzer;
         private Label lb_headline;
     }
 }
