@@ -57,4 +57,12 @@ class Database:
         return cur.fetchone()
         
 
-        #
+    def customCommand(self, value):
+        sqlcommand = f'{value};'
+
+        db=self.DATABASE
+        cur=db.cursor()
+        cur.execute(sqlcommand)
+        return cur.fetchone()
+
+
