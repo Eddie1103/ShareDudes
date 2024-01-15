@@ -49,10 +49,12 @@ class Database:
         return cur.fetchall()
 
     def createUser(self, values):
-        sqlcommand = f'insert into users(name, password, birthdate) VALUES({values});'
+        sqlcommand = f'insert into users(username, password, email_address, banned, creation_date, birthdate, is_admin) VALUES({values});'
 
         db=self.DATABASE
         cur=db.cursor()
         cur.execute(sqlcommand)
         return cur.fetchone()
         
+
+        #
