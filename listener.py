@@ -7,7 +7,7 @@ DATABASE = Database.create()
 
 app = Flask(__name__)
 
-@app.route('/request_database', methods=['POST'])
+@app.route('/', methods=['POST'])
 def request_database():
 
     methode = request.args.get('methode')
