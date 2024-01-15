@@ -31,6 +31,7 @@
         </button>
       </ul>
   </div>
+
   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
@@ -42,17 +43,75 @@
       </ul>
   </div>
 </nav>
-    
-<div class="text-center"><h1>Willkommen bei ShareDudes!</h1></div>
 
-<form class="form-signin">
-    <h1 class="h3 mb-3 font-weight-normal">Registriere dich</h1>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email Adresse" required="" autofocus="">
+<form class="form-signin" onsubmit="submitForm()">
+    <h1 class="h3 mb-3 p-2 font-weight-normal">Registriere dich</h1>
+    <input type="userName" id="inputUserName" class="form-control" placeholder="Benutzername" required="true" autofocus="">
     <h1></h1> 
-    <input type="password" id="inputPassword" class="form-control" placeholder="Passwort" required="">
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email Adresse" required="true" autofocus="">
+    <h1></h1> 
+    <input type="password" id="inputPassword" class="form-control" placeholder="Passwort" required="true">
     <h1></h1>
+    <input type="Street" id="inputStreet" class="form-control" placeholder="Straße" required="true" autofocus="">
+    <h1></h1> 
+    <input type="StreetNumber" id="inputStreetNumber" class="form-control" placeholder="Hausnummer" required="true" autofocus="">
+    <h1></h1>
+    <input type="PostalCode" id="inputPostalCode" class="form-control" placeholder="PLZ" required="true" autofocus="">
+    <h1></h1>
+    <input type="City" id="inputCity" class="form-control" placeholder="Ort" required="true" autofocus="">
+    <h1></h1>
+    <select class="form-select" aria-label="Default select example" id = "inputState">
+      <option value="1">Baden-Württemberg</option>
+      <option value="2">Bayern</option>
+      <option value="3">Berlin</option>
+      <option value="4">Brandenburg</option>
+      <option value="5">Bremen</option>
+      <option value="6">Hamburg</option>
+      <option value="7">Hessen</option>
+      <option value="8">Mecklenburg-Vorpommern</option>
+      <option value="9">Niedersachsen</option>
+      <option value="10">Nordrhein-Westfalen</option>
+      <option value="11">Rheinland-Pfalz</option>
+      <option value="12">Saarland</option>
+      <option value="13">Sachsen</option>
+      <option value="14">Sachsen-Anhalt</option>
+      <option value="15">Schleswig-Holstein</option>
+      <option value="16">Thüringen</option>
+    </select>
+    <h1></h1>
+    <label for="inputDate">Geburtsdatum</label>
+    <input id="inputDate" class="form-control" type="date" placeholder="Geburtsdatum"/>
+    <h1></h1>   
     <button class="btn btn-lg btn-primary btn-block w-100" type="submit">Registrieren</button>
 </form>
 
+<script>
+  function submitForm() {
+    var url = '192.168.6.217:5000/request_database';
+        var data = {
+            methode: 'createuser',
+            values: "'bastardusername', 'bastardpw', 'maul', false, "+Date.now()+", true"
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => response.json()) // Verarbeite die Antwort, wenn sie JSON ist
+        .then(data => {
+            // Hier kannst du den Rückgabewert der API verarbeiten
+            alert(data);
+        })
+        .catch(error => {
+            // Hier kannst du Fehler verarbeiten
+            alert('Fehler beim POST-Request:', error);
+        });
+
+      alert("Formular wurde abgeschickt!");
+  }
+</script>
 </body>
 </html>
