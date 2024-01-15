@@ -25,12 +25,12 @@ namespace ShareDudesAdminTool
 
                 // open new Form, in this case "Home and hides the current form"
 
-                this.Hide();
+                this.Hide();                
 
                 var home = new Home();
                 
                 home.Show();
-                
+
             }
             else
             {
@@ -47,5 +47,6 @@ namespace ShareDudesAdminTool
         {
 
         }
+
     }
 }
