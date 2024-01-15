@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="main.css">
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -85,32 +86,29 @@
     <button class="btn btn-lg btn-primary btn-block w-100" type="submit">Registrieren</button>
 </form>
 
+<button onclick = submitForm()>test</button>
+
 <script>
-  function submitForm() {
-    var url = '192.168.6.217:5000/request_database';
-        var data = {
-            methode: 'createuser',
-            values: "'bastardusername', 'bastardpw', 'maul', false, "+Date.now()+", true"
-        };
+        function submitForm() {
+    var params = {
+  methode: 'createuser',
+  values: 'lol'
+  };
 
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-        .then(response => response.json()) // Verarbeite die Antwort, wenn sie JSON ist
-        .then(data => {
-            // Hier kannst du den Rückgabewert der API verarbeiten
-            alert(data);
-        })
-        .catch(error => {
-            // Hier kannst du Fehler verarbeiten
-            alert('Fehler beim POST-Request:', error);
-        });
+  $hashedPassword = hash('sha256', document.GetElementById("inputPassword"));
 
-      alert("Formular wurde abgeschickt!");
+    $.ajax({
+  url: 'http://localhost:5000/request_database',
+  type: 'POST',
+  contentType: 'application/json',
+  data: JSON.stringify(params),
+  success: function(data) {
+    alert(data);
+  },
+  error: function(error) {
+    alert('Error:', error);
+  }
+    });
   }
 </script>
 </body>
