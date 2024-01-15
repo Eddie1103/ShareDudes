@@ -20,6 +20,8 @@ def request_database():
         values = request.args.get('values')
         #values(name, password, birthdate)
         return jsonify({"result": DATABASE.createUser(values)})
+    elif methode=='customCommand':
+        return jsonify({"result": DATABASE.customCommand(values)})
     else:
         return jsonify({"error": "function not found"}), 403
 
