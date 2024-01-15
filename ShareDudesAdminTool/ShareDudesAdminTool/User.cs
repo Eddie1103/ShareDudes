@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ShareDudesAdminTool
 {
-    public class User
+    public sealed class User
     {
-        private int _userId;
         private string _userName;
         private bool _isAdmin;
         private bool _isBan;
@@ -16,17 +15,10 @@ namespace ShareDudesAdminTool
 
         public User()
         {
-            _userId = 0;
             _userName = string.Empty;
             _isAdmin = false;
             _isBan = false;
             _hasPosts = false;
-        }
-
-        public int UserId
-        {
-            get { return _userId; }
-            set { _userId = value; }
         }
 
         public string UserName
