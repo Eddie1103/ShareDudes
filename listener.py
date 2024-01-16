@@ -17,7 +17,7 @@ def getuserinformations():
     return jsonify({"result": DATABASE.select(DATABASE, condition)})
 
 
-
+'''
 @app.route('/', methods=['POST'])
 def request_database():
 
@@ -37,6 +37,7 @@ def request_database():
 
         return jsonify({"answer" : request})
         return jsonify({"error": "function not found"}), 403
+'''
 
 @app.route('/', methods=['OPTION'])
 def request_database():
