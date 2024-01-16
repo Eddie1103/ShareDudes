@@ -51,15 +51,7 @@ class Database:
         return cur.fetchall()
 
     def createUser(self, values):
-        sqlcommand = f"insert into users(username, password, email_address, banned, birthdate, is_admin) VALUES(
-        '{values[0]}',
-        '{hash(values[1])}',
-        '{values[2]}',
-        '{values[3]}',
-        '{values[4]}',
-        '{values[5]}',
-        '{values[6]}',
-        );"
+        sqlcommand = f"insert into users(username, password, email_address, banned, birthdate, is_admin) VALUES('{values[0]}','{hash(values[1])}','{values[2]}',{values[3]},'{values[4]}','{values[5]}',{values[6]},);"
 
         db=self.dbase
         cur=db.cursor()
