@@ -54,13 +54,11 @@ class Database:
     def createUser(self, values):
         connection = self.connect()
 
-        #hashpassword = hash(values[1])
-        hash_object = hashlib.sha256(b,'',values[1])
-        hex_dig = hash_object.hexdigest()
+        hashpassword = hash(values[1])
+        
+        print('hashedpassord:', hashpassword)
 
-        print('hashedpassord:', hex_dig)
-
-        sqlcommand = f"insert into users(username, password, email_address, birthdate, is_admin) VALUES('{values[0]}','{hex_dig}','{values[2]}','{values[3]}',{values[4]})"
+        sqlcommand = f"insert into users(username, password, email_address, birthdate, is_admin) VALUES('{values[0]}','{hashpassword}','{values[2]}','{values[3]}',{values[4]})"
         print('SQLCommand: ', sqlcommand)
 
         db=connection
