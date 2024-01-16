@@ -44,7 +44,7 @@ namespace Connection
       var host = "194.62.1.218";
       var port = "5432";
       var username = "postgres";
-      var databaseName = "sharedudes";
+      var databaseName = "postgres";
       var password = "bastard";
 
       var pg = "Server=" + host + ";Port=" + port + ";Database=" + databaseName + ";User Id=" + username + ";Password=" + password + ";";
@@ -53,7 +53,6 @@ namespace Connection
 
       _transaction = _connection.BeginTransaction();
 
-      //Init(scheme);
     }
 
     public void Close()
@@ -170,6 +169,7 @@ namespace Connection
       }
     }
 
+     // Load
     public NpgsqlDataReader Load(string command)
     {
       CheckConnection();

@@ -34,3 +34,11 @@ C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDud
 C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.pdb
 C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.genruntimeconfig.cache
 C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ref\ShareDudesAdminTool.dll
+C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\Npgsql.dll
+C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\System.Text.Encodings.Web.dll
+C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\System.Text.Json.dll
+C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Darkn\OneDrive\Dokumente\GitHub\ShareDudes\ShareDudesAdminTool\ShareDudesAdminTool\obj\Debug\net6.0-windows\ShareDudesAdminTool.csproj.CopyComplete

@@ -44,5 +44,7 @@ namespace ShareDudesAdminTool
             get { return _hasPosts; }
             set { _hasPosts = value; }
         }
+
+
     }
 }
