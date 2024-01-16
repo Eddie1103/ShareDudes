@@ -10,15 +10,23 @@ DATABASE = Database.create()
 app = Flask(__name__)
 CORS(app)
 
-
 @app.route('/createuser', methods=['POST'])
 def testget():
     
     data = request.json
-    condition = data.get('values')
-    print("createuser POST:values ->", condition)
+    values=[
+    data.get('username'),
+    data.get('password'),
+    data.get('email_address'),
+    data.get('banned'),
+    data.get('creation_date'),
+    data.get('birthdate'),
+    data.get('is_admin'),
+    ]
 
-    return jsonify({"result":DATABASE.createUser(DATABASE, condition)})
+    print("createuser POST")
+
+    return jsonify({"result":DATABASE.createUser(DATABASE, values)})
 
 @app.route('/select', methods=['POST', 'GET'])
 def select():
