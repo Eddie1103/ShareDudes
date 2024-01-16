@@ -33,12 +33,12 @@ namespace ShareDudesAdminTool
             }
 
             // Load post array
-
             var offerCollection = new OfferCollection();
             offerCollection.LoadOffer();
 
             dgv_offer.Columns.Add("title", "Titel");
             dgv_offer.Columns.Add("description", "Text");
+            dgv_offer.Columns.Add("status", "Status");
         }
 
         public void UserConnection()
