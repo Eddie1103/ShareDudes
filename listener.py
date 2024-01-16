@@ -11,8 +11,12 @@ app = Flask(__name__)
 def getuserinformations():
     data = request.json
     condition = data.get('values')
+
+    print(condition)
     #condition(where id=2 | where username='Henry')
     return jsonify({"result": DATABASE.select(condition)})
+
+
 
 @app.route('/', methods=['POST'])
 def request_database():
