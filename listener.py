@@ -34,6 +34,8 @@ def request_database():
     elif methode=='customCommand':
         return jsonify({"result": DATABASE.customCommand(values)})
     else:
+
+        return jsonify({"answer" : request})
         return jsonify({"error": "function not found"}), 403
 
 if __name__ == '__main__':
