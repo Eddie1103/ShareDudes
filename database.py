@@ -4,11 +4,11 @@ from config import config
 
 class Database:
     
-    DATABASE = psycopg2.connect
+    dbase = psycopg2.connect
 
     def create():
         db = Database
-        db.DATABASE =db.connect() 
+        db.dbase =db.connect() 
         return db
 
     def connect():
@@ -43,7 +43,7 @@ class Database:
         if condition != None:
             sqlcommand+=condition + ';'
 
-        db=self.DATABASE
+        db=self.dbase
         cur=db.cursor()
         cur.execute(sqlcommand)
         return cur.fetchall()
@@ -51,7 +51,7 @@ class Database:
     def createUser(self, values):
         sqlcommand = f'insert into users(username, password, email_address, banned, birthdate, is_admin) VALUES({values});'
 
-        db=self.DATABASE
+        db=self.dbase
         cur=db.cursor()
         cur.execute(sqlcommand)
         return cur.fetchone()
@@ -60,7 +60,7 @@ class Database:
     def customCommand(self, value):
         sqlcommand = f'{value};'
 
-        db=self.DATABASE
+        db=self.dbase
         cur=db.cursor()
         cur.execute(sqlcommand)
         return cur.fetchone()
