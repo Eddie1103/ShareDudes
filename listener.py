@@ -7,10 +7,11 @@ DATABASE = Database.create()
 
 app = Flask(__name__)
 
-@app.route('/testget', methods=['GET'])
+@app.get('/testget', methods=['GET'])
 def testget():
-    #condition(where id=2 | where username='Henry')
-    return jsonify({"result": DATABASE.select("where id > 0")})
+    
+    #return jsonify({"result": DATABASE.select("where id > 0")})
+    return jsonify({"result": "hallo"})
 
 
 @app.route('/testpost', methods=['POST'])
