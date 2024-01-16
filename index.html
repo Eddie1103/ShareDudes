@@ -50,7 +50,7 @@
 </nav>
 
 <div class="text-center p-2">
-  <button type="button" data-toggle="modal" data-target=".createModal" class="btn btn-lg btn-secondary">Eigenes Inserat veröffentlichen</button>
+  <button type="button" data-toggle="modal" data-target=".createModal" class="btn btn-lg btn-secondary" id="createButton">Eigenes Inserat veröffentlichen</button>
 </div>
 
 <div class="modal fade createModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -264,6 +264,9 @@
                 logoutbutton.classList.add('btn-secondary', 'btn', 'my-2', 'm-1');
 
                 registerStatusTextElement.parentNode.replaceChild(logoutbutton, registerStatusTextElement);
+              }else{
+                var create = document.getElementById("createButton");
+                create.style.display = 'none';
               }
           }
           updateLoginStatusText();

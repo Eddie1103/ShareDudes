@@ -84,37 +84,33 @@
     <input id="inputDate" class="form-control" type="date" placeholder="Geburtsdatum"/>
     <h1></h1>   
     <button class="btn btn-lg btn-primary btn-block w-100" type="submit">Registrieren</button>
-</form>
+</form>"
 
 <button onclick="submitForm()">test</button>
 
 <script>
-  function hashPassword()
-  {
-    var passwordToHash = document.getElementById("inputPassword");
-    fetch('hash_password.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: `password=${passwordToHash.value}`,
-        })
-        .then(response => response.json())
-        .then(data => {
-           return data.hashedPassword;
-        })
-        .catch(error => alert('Fehler:', error));
-  }
-
-        
-        function submitForm() {
-       var name = document.getElementById("inputUserName").value;
-      var password = hashPassword();
-      alert(name);
-      alert(password);
+    function submitForm() {
+    var name = document.getElementById("inputUserName").value;
+    var mail = document.getElementById("inputEmail").value;
+    var pw = document.getElementById("inputPassword").value;
+    var street = document.getElementById("inputStreet").value;
+    var streetNr = document.getElementById("inputStreetNumber").value;
+    var postal = document.getElementById("inputPostalCode").value;
+    var city = document.getElementById("inputCity").value;
+    var state = document.getElementById("inputState").value;
+    var birthdate = document.getElementById("birthdate").value;
+    
     var params = {
-  values: "''"
-  };
+    name: "'"+name+"'",
+    email: "'"+mail+"'",
+    pw: "'"+pw+"'",
+    street: "'"+street+"'",
+    streetNumber: streetNr,
+    postalCode: postal ,
+    city: "'"+city+"'" ,
+    state: "'"+state+"'" ,
+    birthdate: "'"+birthdate+"'" ,
+    };
 
     $.ajax({
   url: 'http://194.62.1.218:5000/testpost',
