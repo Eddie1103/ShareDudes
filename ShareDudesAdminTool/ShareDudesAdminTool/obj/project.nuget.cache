@@ -1,8 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "xTFDqKdqGoM7S9PrYna6UpyR/1o+Vvp/+QORKvTdm6iPi+LB+5izHd/2XZkNG0rTjvxOFtuLrZt4Dfo9jyLb9A==",
+  "dgSpecHash": "J63iXKOvfeIcWi9+p11FL+wMjKZ+PwoVPZkMQ1Desx462NqttMTmtJ4siQyWJNgBxG1G+2LT+TEg34/a1SNT4g==",
   "success": true,
   "projectFilePath": "C:\\Users\\Darkn\\OneDrive\\Dokumente\\GitHub\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Darkn\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Darkn\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Darkn\\.nuget\\packages\\npgsql\\8.0.1\\npgsql.8.0.1.nupkg.sha512",
+    "C:\\Users\\Darkn\\.nuget\\packages\\system.diagnostics.diagnosticsource\\8.0.0\\system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
+    "C:\\Users\\Darkn\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Darkn\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\Darkn\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,65 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net.Http;
 
-namespace ShareDudesAdminTool
+public class Connection
 {
-    using System;
-    using System.Net.Http;
-    using System.Text;
-    using System.Threading.Tasks;
-
-    public class DatabaseClient
+    private async void connection()
     {
-        private readonly string baseUrl;
+        string url = "https://example.com/api/data"; // Ändern Sie dies entsprechend Ihrer API-URL
 
-        public DatabaseClient(string baseUrl)
+        using (HttpClient client = new HttpClient())
         {
-            this.baseUrl = baseUrl;
-        }
-
-        public async Task<string> GetUserInformation(string condition)
-        {
-            return await SendRequest("getuserinformations", condition);
-        }
-
-        public async Task<string> CreateUser(string values)
-        {
-            return await SendRequest("createuser", values);
-        }
-
-        public async Task<string> CustomCommand(string values)
-        {
-            return await SendRequest("customCommand", values);
-        }
-
-        private async Task<string> SendRequest(string method, string data)
-        {
-            using (var client = new HttpClient())
+            try
             {
-                try
-                {
-                    var requestUrl = $"{baseUrl}/request_database?methode={method}&values={data}";
-                    var response = await client.PostAsync(requestUrl, new StringContent(string.Empty, Encoding.UTF8, "application/json"));
+                HttpResponseMessage response = await client.GetAsync(url);
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        return await response.Content.ReadAsStringAsync();
-                    }
-                    else
-                    {
-                        return $"Error: {response.StatusCode}";
-                    }
-                }
-                catch (Exception ex)
+                if (response.IsSuccessStatusCode)
                 {
-                    return $"Exception: {ex.Message}";
+                    string responseData = await response.Content.ReadAsStringAsync();
+                    // Hier können Sie mit den Daten arbeiten, z.B. in Ihren Steuerelementen anzeigen
+                    MessageBox.Show("Erfolgreiche Antwort: " + responseData);
                 }
+                else
+                {
+                    MessageBox.Show("Fehler beim HTTP-Request: " + response.ReasonPhrase);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fehler: " + ex.Message);
             }
         }
     }
-
 }
+
