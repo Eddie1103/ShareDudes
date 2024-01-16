@@ -33,7 +33,7 @@ namespace ShareDudesAdminTool
                     {
                         var user = new User();
                         user.UserName = Database.GetStringValue(reader, "username");
-                        user.IsBanned = Database.GetBoolValue(reader, "banned");
+                        // user.IsBanned = Database.GetBoolValue(reader, "banned");
                         user.IsAdmin = Database.GetBoolValue(reader, "is_admin");
 
                         _users.Add (user);

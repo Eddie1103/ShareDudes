@@ -32,13 +32,19 @@ namespace ShareDudesAdminTool
                 dgv_user.Rows.Add(new[] { item.UserName, item.IsBanned.ToString(), item.IsAdmin.ToString() });
             }
 
-            // Load post array
+            // Load offer array
             var offerCollection = new OfferCollection();
             offerCollection.LoadOffer();
 
             dgv_offer.Columns.Add("title", "Titel");
             dgv_offer.Columns.Add("description", "Text");
             dgv_offer.Columns.Add("status", "Status");
+
+            foreach (var item in offerCollection.Offers)
+            {
+                dgv_offer.Rows.Add(new[] { item.Title, item.Description });
+            }
+            
         }
 
         public void UserConnection()
