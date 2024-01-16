@@ -65,8 +65,6 @@ class Database:
         cur=connection.cursor()
         result = cur.execute(sqlcommand)
         print("database result:" , result)
-        resultcommit = cur.commit()
-        print("commit:", resultcommit)
         return cur.fetchone()
         
 
