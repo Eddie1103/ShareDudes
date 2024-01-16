@@ -18,7 +18,6 @@ def testget():
     data.get('username'),
     data.get('password'),
     data.get('email_address'),
-    data.get('banned'),
     data.get('birthdate'),
     data.get('is_admin'),
     ]
@@ -28,8 +27,6 @@ def testget():
     print(values[2])
     print(values[3])
     print(values[4])
-    print(values[5])
-    print(values[6])
 
     print("createuser POST")
 
