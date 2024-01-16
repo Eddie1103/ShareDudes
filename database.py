@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import psycopg2
+import hashlib
 from config import config
 
 class Database:
@@ -51,12 +52,18 @@ class Database:
         return cur.fetchall()
 
     def createUser(self, values):
-        hashpassword = hash(values[1])
-        print('hashedpassord:', hashpassword)
-        sqlcommand = f"insert into users(username, password, email_address, birthdate, is_admin) VALUES('{values[0]}','{hashpassword}','{values[2]}','{values[3]}',{values[4]})"
+        connection = self.connect()
+
+        #hashpassword = hash(values[1])
+        hash_object = hashlib.sha256(values[1])
+        hex_dig = hash_object.hexdigest()
+
+        print('hashedpassord:', hex_dig)
+
+        sqlcommand = f"insert into users(username, password, email_address, birthdate, is_admin) VALUES('{values[0]}','{hex_dig}','{values[2]}','{values[3]}',{values[4]})"
         print('SQLCommand: ', sqlcommand)
 
-        db=self.dbase
+        db=connection
         cur=db.cursor()
         cur.execute(sqlcommand)
         return cur.fetchone()
