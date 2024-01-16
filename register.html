@@ -86,17 +86,37 @@
     <button class="btn btn-lg btn-primary btn-block w-100" type="submit">Registrieren</button>
 </form>
 
-<button onclick = submitForm()>test</button>
+<button onclick="alert(hashPassword())">test</button>
 
 <script>
+  function hashPassword()
+  {
+    var passwordToHash = document.getElementById("inputPassword");
+    fetch('hash_password.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `password=${passwordToHash.value}`,
+        })
+        .then(response => response.json())
+        .then(data => {
+           var hashedPassword = data.hashedPassword;
+        })
+        .catch(error => alert('Fehler:', error));
+        return hashedPassword;
+  }
+
+        
         function submitForm() {
+       var name = document.getElementById("inputUserName").textContent;
+
     var params = {
-  methode: 'createuser',
-  values: 'lol'
+  values: "''"
   };
 
     $.ajax({
-  url: 'http://194.62.1.218:5000/',
+  url: 'http://194.62.1.218:5000/testpost',
   type: 'POST',
   contentType: 'application/json',
   data: JSON.stringify(params),
