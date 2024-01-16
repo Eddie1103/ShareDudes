@@ -98,22 +98,23 @@
     var postal = document.getElementById("inputPostalCode").value;
     var city = document.getElementById("inputCity").value;
     var state = document.getElementById("inputState").value;
-    var birthdate = document.getElementById("birthdate").value;
+    var birthdate = document.getElementById("inputDate").value;
     
     var params = {
-    name: "'"+name+"'",
-    email: "'"+mail+"'",
-    pw: "'"+pw+"'",
-    street: "'"+street+"'",
+    username: name,
+    email_address: mail,
+    password: pw,
+    street: street,
     streetNumber: streetNr,
-    postalCode: postal ,
-    city: "'"+city+"'" ,
-    state: "'"+state+"'" ,
-    birthdate: "'"+birthdate+"'" ,
+    postalCode: postal,
+    city: city,
+    state: state,
+    birthdate: birthdate,
+    is_admin: "true",
     };
 
     $.ajax({
-  url: 'http://194.62.1.218:5000/testpost',
+  url: 'http://194.62.1.218:5000/createuser',
   type: 'POST',
   contentType: 'application/json',
   data: JSON.stringify(params),
