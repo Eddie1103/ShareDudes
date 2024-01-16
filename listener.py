@@ -38,6 +38,11 @@ def request_database():
         return jsonify({"answer" : request})
         return jsonify({"error": "function not found"}), 403
 
+@app.route('/', methods=['OPTION'])
+def request_database():
+    return jsonify({"answer" : request})
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
     
