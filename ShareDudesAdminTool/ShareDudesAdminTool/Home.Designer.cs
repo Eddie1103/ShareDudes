@@ -33,20 +33,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.btn_logout = new System.Windows.Forms.Button();
             this.tp_reports = new System.Windows.Forms.TabPage();
-            this.tp_posts = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isDeactivatedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tp_offers = new System.Windows.Forms.TabPage();
+            this.dgv_offer = new System.Windows.Forms.DataGridView();
             this.postsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tp_user = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.dgv_user = new System.Windows.Forms.DataGridView();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_search = new System.Windows.Forms.TextBox();
             this.tc_home = new System.Windows.Forms.TabControl();
-            this.tp_posts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tp_offers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_offer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
             this.tp_user.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).BeginInit();
@@ -77,59 +73,30 @@
             this.tp_reports.Text = "Reports";
             this.tp_reports.UseVisualStyleBackColor = true;
             // 
-            // tp_posts
+            // tp_offers
             // 
-            this.tp_posts.Controls.Add(this.dataGridView1);
-            this.tp_posts.Location = new System.Drawing.Point(4, 32);
-            this.tp_posts.Margin = new System.Windows.Forms.Padding(4);
-            this.tp_posts.Name = "tp_posts";
-            this.tp_posts.Padding = new System.Windows.Forms.Padding(4);
-            this.tp_posts.Size = new System.Drawing.Size(1178, 872);
-            this.tp_posts.TabIndex = 0;
-            this.tp_posts.Text = "Posts";
-            this.tp_posts.UseVisualStyleBackColor = true;
+            this.tp_offers.Controls.Add(this.dgv_offer);
+            this.tp_offers.Location = new System.Drawing.Point(4, 32);
+            this.tp_offers.Margin = new System.Windows.Forms.Padding(4);
+            this.tp_offers.Name = "tp_offers";
+            this.tp_offers.Padding = new System.Windows.Forms.Padding(4);
+            this.tp_offers.Size = new System.Drawing.Size(1178, 872);
+            this.tp_offers.TabIndex = 0;
+            this.tp_offers.Text = "Angebote";
+            this.tp_offers.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgv_offer
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.titleDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.isDeactivatedDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.postsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(969, 433);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // titleDataGridViewTextBoxColumn
-            // 
-            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
-            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
-            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            // 
-            // isDeactivatedDataGridViewCheckBoxColumn
-            // 
-            this.isDeactivatedDataGridViewCheckBoxColumn.DataPropertyName = "IsDeactivated";
-            this.isDeactivatedDataGridViewCheckBoxColumn.HeaderText = "IsDeactivated";
-            this.isDeactivatedDataGridViewCheckBoxColumn.Name = "isDeactivatedDataGridViewCheckBoxColumn";
-            // 
-            // postsBindingSource
-            // 
-            this.postsBindingSource.DataSource = typeof(ShareDudesAdminTool.Posts);
+            this.dgv_offer.AllowUserToOrderColumns = true;
+            this.dgv_offer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_offer.Location = new System.Drawing.Point(7, 7);
+            this.dgv_offer.Name = "dgv_offer";
+            this.dgv_offer.RowTemplate.Height = 25;
+            this.dgv_offer.Size = new System.Drawing.Size(1164, 620);
+            this.dgv_offer.TabIndex = 0;
             // 
             // tp_user
             // 
-            this.tp_user.Controls.Add(this.button1);
             this.tp_user.Controls.Add(this.dgv_user);
             this.tp_user.Location = new System.Drawing.Point(4, 32);
             this.tp_user.Margin = new System.Windows.Forms.Padding(4);
@@ -140,21 +107,14 @@
             this.tp_user.Text = "User";
             this.tp_user.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1049, 333);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // dgv_user
             // 
             this.dgv_user.AllowUserToAddRows = false;
             this.dgv_user.AllowUserToDeleteRows = false;
             this.dgv_user.AllowUserToOrderColumns = true;
+            this.dgv_user.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -165,9 +125,10 @@
             this.dgv_user.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_user.Location = new System.Drawing.Point(7, 7);
+            this.dgv_user.MultiSelect = false;
             this.dgv_user.Name = "dgv_user";
             this.dgv_user.RowTemplate.Height = 25;
-            this.dgv_user.Size = new System.Drawing.Size(914, 491);
+            this.dgv_user.Size = new System.Drawing.Size(1164, 620);
             this.dgv_user.TabIndex = 1;
             // 
             // userBindingSource
@@ -189,7 +150,7 @@
             this.tc_home.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tc_home.Controls.Add(this.tp_user);
-            this.tc_home.Controls.Add(this.tp_posts);
+            this.tc_home.Controls.Add(this.tp_offers);
             this.tc_home.Controls.Add(this.tp_reports);
             this.tc_home.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tc_home.Location = new System.Drawing.Point(13, 69);
@@ -198,7 +159,6 @@
             this.tc_home.SelectedIndex = 0;
             this.tc_home.Size = new System.Drawing.Size(1186, 908);
             this.tc_home.TabIndex = 0;
-            this.tc_home.SelectedIndexChanged += new System.EventHandler(this.tc_home_SelectedIndexChanged);
             // 
             // Home
             // 
@@ -215,8 +175,8 @@
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
-            this.tp_posts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tp_offers.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_offer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
             this.tp_user.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).EndInit();
@@ -230,17 +190,14 @@
         #endregion
         private Button btn_logout;
         private TabPage tp_reports;
-        private TabPage tp_posts;
+        private TabPage tp_offers;
         private TabPage tp_user;
         private TabControl tc_home;
         private TextBox tb_search;
         private DataGridView dgv_user;
         private BindingSource userBindingSource;
         private Button button1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn isDeactivatedDataGridViewCheckBoxColumn;
+        private DataGridView dgv_offer;
         private BindingSource postsBindingSource;
     }
 }

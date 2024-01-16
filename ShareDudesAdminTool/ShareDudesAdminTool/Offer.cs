@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ShareDudesAdminTool
 {
-    public sealed class Posts
+    public sealed class Offer
     {
         public bool _isDeactivated;
         public string _title;
         public string _description;
         public bool _hasAttachements;
 
-        public Posts()
+        public Offer()
         {
             _isDeactivated = false;
             _title = string.Empty;

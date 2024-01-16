@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,18 +19,26 @@ namespace ShareDudesAdminTool
 
         private void Home_Load(object sender, EventArgs e)
         {
+            // Load user array
             var userCollection = new UserCollection();
             userCollection.LoadUser();
            
-
             dgv_user.Columns.Add("username", "Benutzername");
             dgv_user.Columns.Add("banned", "Gebannt");
-
+            dgv_user.Columns.Add("is_admin", "IstAdmin");
 
             foreach (var item in userCollection.Users)
             {
-                dgv_user.Rows.Add(new[] { item.UserName, item.IsBanned.ToString() });
+                dgv_user.Rows.Add(new[] { item.UserName, item.IsBanned.ToString(), item.IsAdmin.ToString() });
             }
+
+            // Load post array
+
+            var offerCollection = new OfferCollection();
+            offerCollection.LoadOffer();
+
+            dgv_offer.Columns.Add("title", "Titel");
+            dgv_offer.Columns.Add("description", "Text");
         }
 
         public void UserConnection()
@@ -42,34 +49,15 @@ namespace ShareDudesAdminTool
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
-
-
-
-                // open new Form, in this case "Login"
-
-                this.Close();
+            // open new Form, in this case "Login"
+            this.Close();
             var login = new Login();
             login.Show();
   
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            using (var db = Database.Create())
-            {
-                var name = string.Empty;
-                using (var reader = db.Load("SELECT * FROM users"))
-                {
-                    while (reader.Read())
-                    {
-                        name = Database.GetStringValue(reader, "username");
-                    }
-                }
-               
-                MessageBox.Show(name);
-            }
-        }
-
+        // Probably dead code
+        /*
         private void tc_home_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tc_home.SelectedIndex == 0)
@@ -98,7 +86,7 @@ namespace ShareDudesAdminTool
 
             }
         }
-
+        */
 
     }
 }
