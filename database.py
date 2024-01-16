@@ -53,7 +53,6 @@ class Database:
 
     def createUser(self, values):
         connection = Database.connect()
-
         hashpassword = hash(values[1])
         
         print('hashedpassord:', hashpassword)
@@ -64,7 +63,9 @@ class Database:
         db=connection
         cur=db.cursor()
         result = cur.execute(sqlcommand)
-        print("database result::::::::::::::::::" , result)
+        print("database result:" , result)
+        resultcommit = cur.commit()
+        print("commit:", resultcommit)
         return cur.fetchall()
         
 
