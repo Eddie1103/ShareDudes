@@ -11,45 +11,52 @@ app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/testget', methods=['GET'])
+@app.route('/createuser', methods=['POST'])
 def testget():
     
-    #return jsonify({"result": DATABASE.select("where id > 0")})
-    return jsonify({"result": "hallo"})
-
-
-@app.route('/testpost', methods=['POST'])
-def testpost():
     data = request.json
     condition = data.get('values')
+    print("createuser POST:values ->", condition)
 
-    print(condition)
+    return jsonify({"result":DATABASE.createUser(DATABASE, condition)})
+
+@app.route('/select', methods=['POST', 'GET'])
+def select():
+    condition = ""
+
+    if request.method  == 'POST':
+        data = request.json
+        condition = data.get('values')
+        print("select POST:values ->", condition)
+    else:
+        condition = "where id>0"
+        print("select GET")
+
     #condition(where id=2 | where username='Henry')
     return jsonify({"result": DATABASE.select(DATABASE, condition)})
 
+@app.route('/customCommand', methods=['POST'])
+def select():
+    condition = ""
 
-'''
-@app.route('/', methods=['POST'])
-def request_database():
+    if request.method  == 'POST':
+        data = request.json
+        condition = data.get('values')
+        print("select POST:values ->", condition)
 
-    methode = request.args.get('methode')
-    
-    if methode=='getuserinformations':
-        condition = request.args.get('values')
-        #condition(where id=2 | where username='Henry')
-        return jsonify({"result": DATABASE.select(condition)})
-    elif methode =='createuser':
-        values = request.args.get('values')
-        #values(name, password, birthdate)
-        return jsonify({"result": DATABASE.createUser(values)})
-    elif methode=='customCommand':
-        return jsonify({"result": DATABASE.customCommand(values)})
-    else:
+    #condition(where id=2 | where username='Henry')
+    return jsonify({"result": DATABASE.select(DATABASE, condition)})
 
-        return jsonify({"answer" : request})
-        return jsonify({"error": "function not found"}), 403
-'''
+@app.route('/', methods=['POST', 'GET'])
+def huansohn():
+    return jsonify({"result": "fick dich!"})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
     
+
+    #get userinformation
+
+    #createuser
+
+    #customcommand
