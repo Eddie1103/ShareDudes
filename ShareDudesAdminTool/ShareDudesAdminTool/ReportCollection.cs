@@ -22,6 +22,7 @@ namespace ShareDudesAdminTool
         }
 
         // Data for userarray
+        /*
         public void LoadReport()
         {
             using (var db = Database.Create())
@@ -33,13 +34,14 @@ namespace ShareDudesAdminTool
                         var post = new Reports();
 
                         var report = new Reports();
-                        report._reportTitle = Database.GetStringValue(reader, "title");
-                        report._reportText = Database.GetStringValue(reader, "text");
+                       // report._reportTitle = Database.GetStringValue(reader, "title");
+                       // report._reportText = Database.GetStringValue(reader, "text");
 
                         _report.Add(post);
                     }
                 }
             }
         }
+        */
     }
 }
