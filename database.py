@@ -55,7 +55,7 @@ class Database:
         connection = self.connect()
 
         #hashpassword = hash(values[1])
-        hash_object = hashlib.sha256(values[1])
+        hash_object = hashlib.sha256(b,'',values[1])
         hex_dig = hash_object.hexdigest()
 
         print('hashedpassord:', hex_dig)
