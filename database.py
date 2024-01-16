@@ -56,16 +56,18 @@ class Database:
         connection = psycopg2.connect(**params)
 
         hashpassword = hash(values[1])
-        
         print('hashedpassord:', hashpassword)
 
-        sqlcommand = f"insert into users(username, password, email_address, birthdate, is_admin) VALUES('{values[0]}','{hashpassword}','{values[2]}','{values[3]}',{values[4]})"
+        #sqlcommand = f"insert into users(username, password, email_address, birthdate, is_admin) VALUES('{values[0]}','{hashpassword}','{values[2]}','{values[3]}',{values[4]})"
+        
+        sqlcommand = "insert into users(username, password, email_address, birthdate, is_admin) VALUES(%s, %s,%s,%s,%s)"
+        
         print('SQLCommand: ', sqlcommand)
 
         cur=connection.cursor()
-        result = cur.execute(sqlcommand)
+        result = cur.execute('insert into users(username, password, email_address, birthdate, is_admin) VALUES(%s, %s,%s,%s,%s)', (values[0], hashpassword,values[2],values[3],values[4]))
         print("database result:" , result)
-        return 'schaudb'
+        return cur.fetchone()
         
 
     def customCommand(self, value):
