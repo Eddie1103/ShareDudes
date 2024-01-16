@@ -23,6 +23,14 @@ def testget():
     data.get('is_admin'),
     ]
 
+    print(values[0])
+    print(values[1])
+    print(values[2])
+    print(values[3])
+    print(values[4])
+    print(values[5])
+    print(values[6])
+
     print("createuser POST")
 
     return jsonify({"result":DATABASE.createUser(DATABASE, values)})
