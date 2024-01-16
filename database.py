@@ -53,7 +53,7 @@ class Database:
     def createUser(self, values):
         hashpassword = hash(values[1])
         print('hashedpassord:', hashpassword)
-        sqlcommand = f"insert into users(username, password, email_address, birthdate, is_admin) VALUES('{values[0]}','{hashpassword}','{values[2]}','{values[3]}','{values[4]}');"
+        sqlcommand = f"insert into users(username, password, email_address, birthdate, is_admin) VALUES('{values[0]}','{hashpassword}','{values[2]}','{values[3]}','{values[4]}')"
 
         db=self.dbase
         cur=db.cursor()
