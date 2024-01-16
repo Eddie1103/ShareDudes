@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 
-DATABASE = Database.create()
+database = Database.create()
 
 app = Flask(__name__)
 CORS(app)
@@ -20,17 +20,17 @@ def testget():
     data.get('email_address'),
     data.get('birthdate'),
     data.get('is_admin'),
+    
+    data.get('street'),
+    data.get('streetNumber'),
+    data.get('postalCode'),
+    data.get('city'),
+    data.get('state'),
     ]
-
-    print(values[0])
-    print(values[1])
-    print(values[2])
-    print(values[3])
-    print(values[4])
 
     print("createuser POST")
 
-    return jsonify({"result":DATABASE.createUser(DATABASE, values)})
+    return jsonify({"result":database.createUser(database, values)})
 
 @app.route('/select', methods=['POST', 'GET'])
 def select():
@@ -41,11 +41,10 @@ def select():
         condition = data.get('values')
         print("select POST:values ->", condition)
     else:
-        condition = "where id>0"
         print("select GET")
 
     #condition(where id=2 | where username='Henry')
-    return jsonify({"result": DATABASE.select(DATABASE, condition)})
+    return jsonify({"result": database.select(condition)})
 
 @app.route('/', methods=['POST', 'GET'])
 def huansohn():

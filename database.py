@@ -44,7 +44,8 @@ class Database:
     def select(self, condition):
         sqlcommand = f'select * from users '
         if condition != None:
-            sqlcommand+=condition + ';'
+            sqlcommand+=condition
+        sqlcommand+=';'
 
         db=self.dbase
         cur=db.cursor()
@@ -52,22 +53,32 @@ class Database:
         return cur.fetchall()
 
     def createUser(self, values):
-        params = config()
-        connection = psycopg2.connect(**params)
-
-        hashpassword = hash(values[1])
-        print('hashedpassord:', hashpassword)
-
-        #sqlcommand = f"insert into users(username, password, email_address, birthdate, is_admin) VALUES('{values[0]}','{hashpassword}','{values[2]}','{values[3]}',{values[4]})"
+        password = values[1]
+        hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
         
-        sqlcommand = "insert into users(username, password, email_address, birthdate, is_admin) VALUES(%s, %s,%s,%s,%s)"
-        
-        print('SQLCommand: ', sqlcommand)
+        print('hashedpassord:', hashed_password)
 
-        cur=connection.cursor()
-        result = cur.execute('insert into users(username, password, email_address, birthdate, is_admin) VALUES(%s, %s,%s,%s,%s)', (values[0], hashpassword,values[2],values[3],values[4]))
-        print("database result:" , result)
-        return cur.fetchone()
+        cur=self.dbase.cursor()
+        cur.execute('insert into users(username, password, email_address, birthdate, is_admin) VALUES(%s, %s,%s,%s,%s)', 
+                             (values[0], hashed_password,values[2],values[3],values[4]))
+        
+        #id raussuchen
+        cur.execute('select user_id from users order by user_id DESC LIMIT 1')
+        fetch = cur.fetchone()
+
+        userid = fetch[0]
+        print(fetch)
+        print(userid)
+        #addresse erstellen
+        #stringexec = 'insert into address(street, housenumber, city, state, user_id) values(%s, %s, %s, %s, %s)'%values[5] %values[6]% values[7]% values[8]% values[9]% userid 
+
+        #print(stringexec)
+        cur.execute('insert into address(street, housenumber, postalcode, city, state, is_main, user_id) values(%s, %s, %s, %s, %s, %s, %s)',
+                   (values[5], values[6], values[7], values[8], values[9], True, userid))
+
+
+        self.dbase.commit()
+        return 'success'
         
 
     def customCommand(self, value):
