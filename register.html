@@ -86,7 +86,7 @@
     <button class="btn btn-lg btn-primary btn-block w-100" type="submit">Registrieren</button>
 </form>
 
-<button onclick="hashPassword()">test</button>
+<button onclick="submitForm()">test</button>
 
 <script>
   function hashPassword()
@@ -101,17 +101,17 @@
         })
         .then(response => response.json())
         .then(data => {
-           var hashedPassword = data.hashedPassword;
+           return data.hashedPassword;
         })
         .catch(error => alert('Fehler:', error));
-
-        alert(hashedPassword);
   }
 
         
         function submitForm() {
-       var name = document.getElementById("inputUserName").textContent;
-
+       var name = document.getElementById("inputUserName").value;
+      var password = hashPassword();
+      alert(name);
+      alert(password);
     var params = {
   values: "''"
   };
