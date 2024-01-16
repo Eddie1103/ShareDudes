@@ -35,18 +35,6 @@ def select():
     #condition(where id=2 | where username='Henry')
     return jsonify({"result": DATABASE.select(DATABASE, condition)})
 
-@app.route('/customCommand', methods=['POST'])
-def select():
-    condition = ""
-
-    if request.method  == 'POST':
-        data = request.json
-        condition = data.get('values')
-        print("select POST:values ->", condition)
-
-    #condition(where id=2 | where username='Henry')
-    return jsonify({"result": DATABASE.select(DATABASE, condition)})
-
 @app.route('/', methods=['POST', 'GET'])
 def huansohn():
     return jsonify({"result": "fick dich!"})
