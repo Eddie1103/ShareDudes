@@ -65,7 +65,7 @@ class Database:
         cur=connection.cursor()
         result = cur.execute(sqlcommand)
         print("database result:" , result)
-        return cur.fetchone()
+        return 'schaudb'
         
 
     def customCommand(self, value):
