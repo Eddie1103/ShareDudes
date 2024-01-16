@@ -14,6 +14,7 @@ def getuserinformations():
     #condition(where id=2 | where username='Henry')
     return jsonify({"result": DATABASE.select(condition)})
 
+@app.route('/', methods=['POST'])
 def request_database():
 
     methode = request.args.get('methode')
