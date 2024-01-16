@@ -19,7 +19,6 @@ def testget():
     data.get('password'),
     data.get('email_address'),
     data.get('banned'),
-    data.get('creation_date'),
     data.get('birthdate'),
     data.get('is_admin'),
     ]
