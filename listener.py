@@ -14,7 +14,7 @@ def getuserinformations():
 
     print(condition)
     #condition(where id=2 | where username='Henry')
-    return jsonify({"result": DATABASE.select(condition)})
+    return jsonify({"result": DATABASE.select(DATABASE, condition)})
 
 
 
