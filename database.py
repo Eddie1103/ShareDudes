@@ -63,7 +63,8 @@ class Database:
 
         db=connection
         cur=db.cursor()
-        cur.execute(sqlcommand)
+        result = cur.execute(sqlcommand)
+        print("database result::::::::::::::::::" , result)
         return cur.fetchall()
         
 
