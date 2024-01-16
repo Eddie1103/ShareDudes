@@ -52,7 +52,9 @@ class Database:
         return cur.fetchall()
 
     def createUser(self, values):
-        connection = Database.connect()
+        params = config()
+        connection = psycopg2.connect(**params)
+
         hashpassword = hash(values[1])
         
         print('hashedpassord:', hashpassword)
@@ -60,13 +62,12 @@ class Database:
         sqlcommand = f"insert into users(username, password, email_address, birthdate, is_admin) VALUES('{values[0]}','{hashpassword}','{values[2]}','{values[3]}',{values[4]})"
         print('SQLCommand: ', sqlcommand)
 
-        db=connection
-        cur=db.cursor()
+        cur=connection.cursor()
         result = cur.execute(sqlcommand)
         print("database result:" , result)
         resultcommit = cur.commit()
         print("commit:", resultcommit)
-        return cur.fetchall()
+        return cur.fetchone()
         
 
     def customCommand(self, value):
