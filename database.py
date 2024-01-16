@@ -52,7 +52,7 @@ class Database:
         return cur.fetchall()
 
     def createUser(self, values):
-        connection = self.connect()
+        connection = Database.connect()
 
         hashpassword = hash(values[1])
         
