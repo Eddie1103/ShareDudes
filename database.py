@@ -3,12 +3,14 @@ import psycopg2
 from config import config
 
 class Database:
-    
-    dbase = psycopg2.connect
+
+    def __init__(self):
+        db = Database
+        self.dbase = db.connect()
 
     def create():
         db = Database
-        db.dbase =db.connect() 
+        db.dbase = db.connect() 
         return db
 
     def connect():
