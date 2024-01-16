@@ -7,7 +7,13 @@ DATABASE = Database.create()
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
+@app.route('/getuserinformations', methods=['POST'])
+def getuserinformations():
+    data = request.json
+    condition = data.get('values')
+    #condition(where id=2 | where username='Henry')
+    return jsonify({"result": DATABASE.select(condition)})
+
 def request_database():
 
     methode = request.args.get('methode')
