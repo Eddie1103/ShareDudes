@@ -2,7 +2,7 @@
 using System;
 using System.Data;
 
-namespace Connection
+namespace ShareDudesAdminTool
 {
   public class Database : IDisposable
   {

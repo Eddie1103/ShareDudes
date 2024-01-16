@@ -10,14 +10,14 @@ namespace ShareDudesAdminTool
     {
         private string _userName;
         private bool _isAdmin;
-        private bool _isBan;
+        private bool _isBanned;
         private bool _hasPosts;
 
         public User()
         {
             _userName = string.Empty;
             _isAdmin = false;
-            _isBan = false;
+            _isBanned = false;
             _hasPosts = false;
         }
 
@@ -33,10 +33,10 @@ namespace ShareDudesAdminTool
             set { _isAdmin = value; }
         }
 
-        public bool IsBan
+        public bool IsBanned
         {
-            get { return _isBan; }
-            set { _isBan = value; }
+            get { return _isBanned; }
+            set { _isBanned = value; }
         }
 
         public bool HasPosts
@@ -44,7 +44,6 @@ namespace ShareDudesAdminTool
             get { return _hasPosts; }
             set { _hasPosts = value; }
         }
-
 
     }
 }

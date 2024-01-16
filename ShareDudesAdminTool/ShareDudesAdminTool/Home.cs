@@ -1,4 +1,4 @@
-﻿using Connection;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +16,22 @@ namespace ShareDudesAdminTool
         public Home()
         {
             InitializeComponent();
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            var userCollection = new UserCollection();
+            userCollection.LoadUser();
+           
+
+            dgv_user.Columns.Add("username", "Benutzername");
+            dgv_user.Columns.Add("banned", "Gebannt");
+
+
+            foreach (var item in userCollection.Users)
+            {
+                dgv_user.Rows.Add(new[] { item.UserName, item.IsBanned.ToString() });
+            }
         }
 
         public void UserConnection()
@@ -41,10 +57,48 @@ namespace ShareDudesAdminTool
         {
             using (var db = Database.Create())
             {
-                var test = db.Load("SELECT * FROM User;");
-                var test2 = test.ToString();
-                MessageBox.Show(test2);
+                var name = string.Empty;
+                using (var reader = db.Load("SELECT * FROM users"))
+                {
+                    while (reader.Read())
+                    {
+                        name = Database.GetStringValue(reader, "username");
+                    }
+                }
+               
+                MessageBox.Show(name);
             }
         }
+
+        private void tc_home_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tc_home.SelectedIndex == 0)
+            {
+
+            } else if (tc_home.SelectedIndex == 1)
+            {
+                using (var db = Database.Create())
+                {
+                    var name = string.Empty;
+                    using (var reader = db.Load("SELECT * FROM users"))
+                    {
+                        while (reader.Read())
+                        {
+                            name = Database.GetStringValue(reader, "username");
+                        }
+                    }
+
+                    MessageBox.Show(name);
+                }
+            } else if (tc_home.SelectedIndex == 2)
+            {
+
+            } else if (tc_home.SelectedIndex == 3)
+            {
+
+            }
+        }
+
+
     }
 }

@@ -45,10 +45,6 @@
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_search = new System.Windows.Forms.TextBox();
             this.tc_home = new System.Windows.Forms.TabControl();
-            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isAdminDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isBanDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.hasPostsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tp_posts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).BeginInit();
@@ -159,7 +155,6 @@
             this.dgv_user.AllowUserToAddRows = false;
             this.dgv_user.AllowUserToDeleteRows = false;
             this.dgv_user.AllowUserToOrderColumns = true;
-            this.dgv_user.AutoGenerateColumns = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -169,12 +164,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_user.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_user.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.userNameDataGridViewTextBoxColumn,
-            this.isAdminDataGridViewCheckBoxColumn,
-            this.isBanDataGridViewCheckBoxColumn,
-            this.hasPostsDataGridViewCheckBoxColumn});
-            this.dgv_user.DataSource = this.userBindingSource;
             this.dgv_user.Location = new System.Drawing.Point(7, 7);
             this.dgv_user.Name = "dgv_user";
             this.dgv_user.RowTemplate.Height = 25;
@@ -209,32 +198,7 @@
             this.tc_home.SelectedIndex = 0;
             this.tc_home.Size = new System.Drawing.Size(1186, 908);
             this.tc_home.TabIndex = 0;
-            // 
-            // userNameDataGridViewTextBoxColumn
-            // 
-            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
-            this.userNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
-            // 
-            // isAdminDataGridViewCheckBoxColumn
-            // 
-            this.isAdminDataGridViewCheckBoxColumn.DataPropertyName = "IsAdmin";
-            this.isAdminDataGridViewCheckBoxColumn.HeaderText = "Admin";
-            this.isAdminDataGridViewCheckBoxColumn.Name = "isAdminDataGridViewCheckBoxColumn";
-            this.isAdminDataGridViewCheckBoxColumn.ReadOnly = true;
-            this.isAdminDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // isBanDataGridViewCheckBoxColumn
-            // 
-            this.isBanDataGridViewCheckBoxColumn.DataPropertyName = "IsBan";
-            this.isBanDataGridViewCheckBoxColumn.HeaderText = "Ban";
-            this.isBanDataGridViewCheckBoxColumn.Name = "isBanDataGridViewCheckBoxColumn";
-            // 
-            // hasPostsDataGridViewCheckBoxColumn
-            // 
-            this.hasPostsDataGridViewCheckBoxColumn.DataPropertyName = "HasPosts";
-            this.hasPostsDataGridViewCheckBoxColumn.HeaderText = "HasPosts";
-            this.hasPostsDataGridViewCheckBoxColumn.Name = "hasPostsDataGridViewCheckBoxColumn";
+            this.tc_home.SelectedIndexChanged += new System.EventHandler(this.tc_home_SelectedIndexChanged);
             // 
             // Home
             // 
@@ -250,6 +214,7 @@
             this.Name = "Home";
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Home_Load);
             this.tp_posts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsBindingSource)).EndInit();
@@ -277,9 +242,5 @@
         private DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
         private DataGridViewCheckBoxColumn isDeactivatedDataGridViewCheckBoxColumn;
         private BindingSource postsBindingSource;
-        private DataGridViewTextBoxColumn userNameDataGridViewTextBoxColumn;
-        private DataGridViewCheckBoxColumn isAdminDataGridViewCheckBoxColumn;
-        private DataGridViewCheckBoxColumn isBanDataGridViewCheckBoxColumn;
-        private DataGridViewCheckBoxColumn hasPostsDataGridViewCheckBoxColumn;
     }
 }
