@@ -7,7 +7,7 @@ DATABASE = Database.create()
 
 app = Flask(__name__)
 
-@app.get('/testget', methods=['GET'])
+@app.route('/testget', methods=['GET'])
 def testget():
     
     #return jsonify({"result": DATABASE.select("where id > 0")})
