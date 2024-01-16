@@ -10,6 +10,21 @@ database = Database.create()
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/login', methods=['POST'])
+def testget():
+    
+    data = request.json
+    values=[
+    data.get('username'),
+    data.get('password'),
+    ]
+
+    result = 'false'
+    if(database.customCommand(database, 'select password from users where username=', values[0]) == values[1]):
+        result = 'true'
+
+    return jsonify({"result":result})
+
 @app.route('/createuser', methods=['POST'])
 def testget():
     
