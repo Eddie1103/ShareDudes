@@ -7,14 +7,20 @@ DATABASE = Database.create()
 
 app = Flask(__name__)
 
-@app.route('/getuserinformations', methods=['POST'])
-def getuserinformations():
+@app.route('/testget', methods=['GET'])
+def testget():
+    #condition(where id=2 | where username='Henry')
+    return jsonify({"result": DATABASE.select("where id > 0")})
+
+
+@app.route('/testpost', methods=['POST'])
+def testpost():
     data = request.json
     condition = data.get('values')
 
     print(condition)
     #condition(where id=2 | where username='Henry')
-    return jsonify({"result": DATABASE.select(DATABASE, condition)})
+    return jsonify({"result": DATABASE.select(condition)})
 
 
 '''
@@ -38,11 +44,6 @@ def request_database():
         return jsonify({"answer" : request})
         return jsonify({"error": "function not found"}), 403
 '''
-
-@app.route('/', methods=['OPTION'])
-def request_database():
-    return jsonify({"answer" : request})
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
