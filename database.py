@@ -64,7 +64,7 @@ class Database:
         db=connection
         cur=db.cursor()
         cur.execute(sqlcommand)
-        return cur.fetchone()
+        return cur.fetchall()
         
 
     def customCommand(self, value):
