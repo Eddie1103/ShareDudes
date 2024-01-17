@@ -1,189 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-  <style>
-    img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-</style> 
+<style>
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+</style>
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShareDudes</title>
   <link rel="stylesheet" href="main.css">
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+    integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+    crossorigin="anonymous"></script>
 </head>
+
 <body>
-
+  <!--Navbar-->
   <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-primary">
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-      <ul class="navbar-nav mr-auto">
-        <a class="navbar-brand mx-auto" href="#">
-          <img src="icon/icon.png" width="40" height="40" class="d-inline-block align-center" alt="">
-          ShareDudes
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-      </ul>
-  </div>
-  <div class="navbar-collapse collapse w-100 order-0 dual-collapse2">
-  <form class="input-group">
-    <input class="form-control" type="search" placeholder="Suchen" aria-label="Suchen">
-    <button class="btn btn-secondary" type="submit">Angebot suchen</button>
-  </form>
-  </div>
-  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-      <ul class="navbar-nav ms-auto align-center">
-        <li class="nav-item">
-          <a class="nav-link active align-items-center" aria-current="page" href="login.html?#" id="logintext">Anmelden</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active align-items-center" aria-current="page" href="register.html?#" id="registertext">Registrieren</a>
-        </li>
-      </ul>
-  </div>
-</nav>
-
-<div class="text-center p-2">
-  <button type="button" data-toggle="modal" data-target=".createModal" class="btn btn-lg btn-secondary" id="createButton" onclick="loadOptions()">Eigenes Inserat veröffentlichen</button>
-</div>
-
-<div class="modal fade createModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <form class="form-signin p-3">
-        <h1 class="h3 mb-3 font-weight-normal">Eigenes Inserat</h1>
-        <input type="Title" id="inputTitle" class="form-control" placeholder="Inserattitel" required="" autofocus="">
-        <h1></h1> 
-        <label for="inputOfferTypes">Inseratart</label>
-        <select class="form-select" aria-label="Default select example" id = "inputOfferTypes"></select>
-        <h1></h1>
-        <div class="form-group">
-          <label for="DescriptionTextarea">Beschreibung für dein Inserat</label>
-          <textarea class="form-control" id="DecriptionTextarea" rows="3"></textarea>
-        </div>
-        <h1></h1>
-        <button class="btn btn-lg btn-secondary btn-block w-100" type="submit">Veröffentlichen</button>
+    <a class="navbar-brand mx-2" href="index.html?#">
+      <img src="icon/icon.png" width="40" height="40" class="d-inline-block align-center" alt="">
+      ShareDudes
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse w-75 order-0 order-md-0 dual-collapse2">
+    </div>
+    <div class="navbar-collapse collapse w-100 order-1 dual-collapse2">
+      <form class="input-group">
+        <input class="form-control" type="search" placeholder="Suchen" aria-label="Suchen">
+        <button class="btn btn-secondary" type="submit">Angebot suchen</button>
       </form>
     </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ms-auto align-center">
+        <li class="nav-item">
+          <a class="nav-link active align-items-center" aria-current="page" href="login.html?#"
+            id="logintext">Anmelden</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active align-items-center" aria-current="page" href="register.html?#"
+            id="registertext">Registrieren</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!--Create Inserat Button-->
+  <div class="text-center p-2">
+    <button type="button" data-toggle="modal" data-target=".createModal" class="btn btn-lg btn-secondary"
+      id="createButton" onclick="loadOptions()">Eigenes Inserat veröffentlichen</button>
   </div>
-</div>  
 
-        <div class="container">
-          <div class="row justify-content-center no-gutters m-2 p-1">
-            <div class="card mb-3 m-2" style="max-width: 540px;">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-                  <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3 m-2" style="max-width: 540px;">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-                  <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-          
-          <div class="row justify-content-center m-2 p-1">
-            <div class="card mb-3 m-2" style="max-width: 540px;">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-                  <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card mb-3 m-2" style="max-width: 540px;">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-                  <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                    <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <div class="row justify-content-center m-2 p-1">
-          <div class="card mb-3 m-2" style="max-width: 540px;">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
-                </div>
-              </div>
-            </div>
+  <!--Modal Create Inserat-->
+  <div class="modal fade createModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form class="form-signin p-3">
+          <h1 class="h3 mb-3 font-weight-normal">Eigenes Inserat</h1>
+          <input type="Title" id="inputTitle" class="form-control" placeholder="Inserattitel" required="" autofocus="">
+          <h1></h1>
+          <label for="inputOfferTypes">Inseratart</label>
+          <select class="form-select" aria-label="Default select example" id="inputOfferTypes"></select>
+          <h1></h1>
+          <div class="form-group">
+            <label for="DescriptionTextarea">Beschreibung für dein Inserat</label>
+            <textarea class="form-control" id="DecriptionTextarea" rows="3"></textarea>
           </div>
+          <h1></h1>
+          <button class="btn btn-lg btn-secondary btn-block w-100" type="submit">Veröffentlichen</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-        <div class="card mb-3 m-2" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4">
-              <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-              <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="card-img p-2" alt="...">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
-              </div>
+  <div class="container">
+    <div class="row justify-content-center no-gutters m-2 p-1">
+
+      <div class="card mb-3 m-2" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur
+                Anzeige</a>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="card mb-3 m-2" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur
+                Anzeige</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+
+    <div class="row justify-content-center m-2 p-1">
+      <div class="card mb-3 m-2" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur
+                Anzeige</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3 m-2" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur
+                Anzeige</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row justify-content-center m-2 p-1">
+      <div class="card mb-3 m-2" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur
+                Anzeige</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mb-3 m-2" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+            <img
+              src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+              class="card-img p-2" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+              <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur
+                Anzeige</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!--Modal zum Angebot anzeigen-->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -194,16 +246,21 @@
             <div class="row row-no-margin">
               <div class="col-xs-12 col-sm-6 col-no-padding">
                 Bild 1
-                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="rounded" alt="...">
+                <img
+                  src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+                  class="rounded" alt="...">
               </div>
               <div class="col-xs-12 col-sm-6 col-no-padding">
                 Bild 2
-                <img src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60" class="rounded" alt="...">
+                <img
+                  src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&h=500&q=60"
+                  class="rounded" alt="...">
               </div>
             </div>
             <div class="p-3 row row-no-margin">
-              
-            Inseratsbeschreibung ist hier also das halt so Rouladenbeschreibung und hallo bin Tante Margret und ich hab Rouladen das steht dann halt hier vom Ding her und weitere Details BITCH
+
+              Inseratsbeschreibung ist hier also das halt so Rouladenbeschreibung und hallo bin Tante Margret und ich
+              hab Rouladen das steht dann halt hier vom Ding her und weitere Details BITCH
             </div>
           </div>
           <div class="modal-footer">
@@ -213,91 +270,92 @@
         </div>
       </div>
     </div>
-        </div>
+  </div>
 
-        <script>
-          function isUserLoggedIn(cookieName) {
-            var cookies = document.cookie.split(';');
-             for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i].trim();
-        
-            if (cookie.indexOf(cookieName + "=") === 0) {
-              return true;
-           }
-          }
-            return false;
-          }
+  <script>
+    function isUserLoggedIn(cookieName) {
+      var cookies = document.cookie.split(';');
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].trim();
 
-          function removeCookie(cookieName) {
-              document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-              location.reload();
-          }
-          
-          function updateLoginStatusText() {
-              var loginStatusTextElement = document.getElementById('logintext');
-              var registerStatusTextElement = document.getElementById('registertext');
-          
-              if (isUserLoggedIn("benutzername")) {
-                var imgElement = document.createElement('img');
-                imgElement.src = 'https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=50&h=50&q=60';
-                imgElement.alt = 'Profilbild';
-                imgElement.style.cursor = 'pointer';
-                imgElement.classList.add('rounded-circle', 'img-fluid')
-                loginStatusTextElement.parentNode.replaceChild(imgElement, loginStatusTextElement);
-                
-                imgElement.addEventListener('click', function() {
-                window.location.href = 'user.html?#';});
+        if (cookie.indexOf(cookieName + "=") === 0) {
+          return true;
+        }
+      }
+      return false;
+    }
 
-                var logoutbutton = document.createElement('button');
-                logoutbutton.textContent = 'Abmelden';
-                logoutbutton.onclick = function(){
-                  removeCookie("benutzername");
-                };
-                logoutbutton.classList.add('btn-secondary', 'btn', 'my-2', 'm-1');
+    function removeCookie(cookieName) {
+      document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      location.reload();
+    }
 
-                registerStatusTextElement.parentNode.replaceChild(logoutbutton, registerStatusTextElement);
-              }else{
-                var create = document.getElementById("createButton");
-                create.style.display = 'none';
-              }
-          }
-          updateLoginStatusText();
+    function updateLoginStatusText() {
+      var loginStatusTextElement = document.getElementById('logintext');
+      var registerStatusTextElement = document.getElementById('registertext');
 
-          function displaySelectedImage(event, elementId) {
-    const selectedImage = document.getElementById(elementId);
-    const fileInput = event.target;
+      if (isUserLoggedIn("benutzername")) {
+        var imgElement = document.createElement('img');
+        imgElement.src = 'https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=50&h=50&q=60';
+        imgElement.alt = 'Profilbild';
+        imgElement.style.cursor = 'pointer';
+        imgElement.classList.add('rounded-circle', 'img-fluid')
+        loginStatusTextElement.parentNode.replaceChild(imgElement, loginStatusTextElement);
 
-    if (fileInput.files && fileInput.files[0]) {
+        imgElement.addEventListener('click', function () {
+          window.location.href = 'user.html?#';
+        });
+
+        var logoutbutton = document.createElement('button');
+        logoutbutton.textContent = 'Abmelden';
+        logoutbutton.onclick = function () {
+          removeCookie("benutzername");
+        };
+        logoutbutton.classList.add('btn-secondary', 'btn', 'my-2', 'm-1');
+
+        registerStatusTextElement.parentNode.replaceChild(logoutbutton, registerStatusTextElement);
+      }
+      else {
+        var create = document.getElementById("createButton").style.display = 'none';
+
+      }
+    }
+    updateLoginStatusText();
+
+    //im moment unbenutzt
+    function displaySelectedImage(event, elementId) {
+      const selectedImage = document.getElementById(elementId);
+      const fileInput = event.target;
+
+      if (fileInput.files && fileInput.files[0]) {
         const reader = new FileReader();
 
-        reader.onload = function(e) {
-            selectedImage.src = e.target.result;
+        reader.onload = function (e) {
+          selectedImage.src = e.target.result;
         };
 
         reader.readAsDataURL(fileInput.files[0]);
+      }
     }
-}
 
-function loadOptions() {
-  alert("der kommt hier rein");
+    function loadOptions() {
       var apiUrl = 'http://194.62.1.218:5000/getoffertypes';
 
       var selectElement = document.getElementById("inputOfferType");
-      alert("request");
       $.ajax({
         url: apiUrl,
         type: 'GET',
         dataType: 'json',
-        complete: function(data) 
-        {
+        complete: function (data) {
           alert("complete ding");
           var newOption = document.createElement("option");
           newOption.value = 1;
-          newOption.text = "test";  
+          newOption.text = "test";
         }
       });
       alert("request fertsch");
     }
-</script>
+  </script>
 </body>
+
 </html>

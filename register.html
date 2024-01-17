@@ -21,31 +21,33 @@
 
 <body>
 
+  <!--Navbar-->
   <nav class="navbar sticky-top navbar-expand-sm navbar-dark bg-primary">
-    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-      <ul class="navbar-nav mr-auto">
-        <a class="navbar-brand mx-auto p-2" href="index.html?#">
-          <img src="icon/icon.png" width="40" height="40" class="d-inline-block align-center" alt="">
-          ShareDudes</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-      </ul>
-  </div>
-
-  <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-      <ul class="navbar-nav ms-auto">
+    <a class="navbar-brand" href="index.html?#">
+      <img src="icon/icon.png" width="40" height="40" class="d-inline-block align-center" alt="">
+      ShareDudes
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse w-75 order-0 order-md-0 dual-collapse2">
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ms-auto align-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="login.html?#">Anmelden</a>
+          <a class="nav-link active align-items-center" aria-current="page" href="login.html?#"
+            id="logintext">Anmelden</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="register.html?#">Registrieren</a>
+          <a class="nav-link active align-items-center" aria-current="page" href="register.html?#"
+            id="registertext">Registrieren</a>
         </li>
       </ul>
-  </div>
-</nav>
+    </div>
+  </nav>
 
-<form class="form-signin" onsubmit="submitForm()">
+
+<form class="card p-5 bg-light mx-auto mt-5 m-1" onsubmit="submitForm()" style="width: 35rem">
     <h1 class="h3 mb-3 p-2 font-weight-normal">Registriere dich</h1>
     <input type="userName" id="inputUserName" class="form-control" placeholder="Benutzername" required="true" autofocus="">
     <h1></h1> 
@@ -85,6 +87,7 @@
     <h1></h1>   
     <button class="btn btn-lg btn-primary btn-block w-100" type="submit">Registrieren</button>
 </form>
+
 
 <script>
     function setCookie(name, value, days) {
