@@ -127,14 +127,11 @@
         contentType: 'application/json',  // Der Content-Type der Anfrage (hier JSON)
         data: JSON.stringify(params),  // Die Daten, die als JSON übertragen werden sollen
         complete: function(responseData) {
-          alert('Erfolgreicher AJAX POST Request. Response: eigener text');
           setCookie("benutzername", name, 30);
-          alert('cookie gesetzt vom ding her');
+          alert("Erfolgreich Registriert!");
           window.location.href = "index.html";
         }
     });
-    
-    alert("jo fertsch");
   }
 </script>
 </body>
