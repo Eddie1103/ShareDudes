@@ -240,15 +240,28 @@
         </div>
 
         <script>
-          function isUserLoggedIn() {
-              return false;
+          function isUserLoggedIn(cookieName) {
+            var cookies = document.cookie.split(';');
+             for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i].trim();
+        
+            if (cookie.indexOf(cookieName + "=") === 0) {
+              return true;
+           }
+          }
+            return false;
+          }
+
+          function removeCookie(cookieName) {
+              document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+              location.reload();
           }
           
           function updateLoginStatusText() {
               var loginStatusTextElement = document.getElementById('logintext');
               var registerStatusTextElement = document.getElementById('registertext');
           
-              if (isUserLoggedIn()) {
+              if (isUserLoggedIn("benutzername")) {
                 var imgElement = document.createElement('img');
                 imgElement.src = 'https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=50&h=50&q=60';
                 imgElement.alt = 'Profilbild';
@@ -261,6 +274,9 @@
 
                 var logoutbutton = document.createElement('button');
                 logoutbutton.textContent = 'Abmelden';
+                logoutbutton.onclick = function(){
+                  removeCookie("benutzername");
+                }
                 logoutbutton.classList.add('btn-secondary', 'btn', 'my-2', 'm-1');
 
                 registerStatusTextElement.parentNode.replaceChild(logoutbutton, registerStatusTextElement);
