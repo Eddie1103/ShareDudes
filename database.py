@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import psycopg2
-import hashlib
+import common
 from config import config
 
 class Database:
@@ -54,7 +54,7 @@ class Database:
 
     def createUser(self, values):
         password = values[1]
-        hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
+        hashed_password = common.hashPassword(password)
         
         print('hashedpassord:', hashed_password)
 
@@ -69,13 +69,10 @@ class Database:
         userid = fetch[0]
         print(fetch)
         print(userid)
-        #addresse erstellen
-        #stringexec = 'insert into address(street, housenumber, city, state, user_id) values(%s, %s, %s, %s, %s)'%values[5] %values[6]% values[7]% values[8]% values[9]% userid 
 
-        #print(stringexec)
+        #addresse erstellen
         cur.execute('insert into address(street, housenumber, postalcode, city, state, is_main, user_id) values(%s, %s, %s, %s, %s, %s, %s)',
                    (values[5], values[6], values[7], values[8], values[9], True, userid))
-
 
         self.dbase.commit()
         return 'success'
@@ -88,6 +85,6 @@ class Database:
         cur=db.cursor()
         cur.execute(sqlcommand)
         #self.dbase.commit()
-        return cur.fetchone()
+        return cur.fetchall()
 
 

@@ -1,5 +1,6 @@
 #!/usr/bin/python
 import psycopg2
+import common
 from database import Database
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -11,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 
 @app.route('/login', methods=['POST'])
-def testget():
+def login():
     
     data = request.json
     values=[
@@ -20,14 +21,17 @@ def testget():
     ]
 
     result = 'false'
-    if(database.customCommand(database, 'select password from users where username=', values[0]) == values[1]):
+    if(database.customCommand(database, 'select password from users where username=', values[0]) == common.hashPassword(values[1])):
         result = 'true'
 
     return jsonify({"result":result})
 
 @app.route('/createuser', methods=['POST'])
-def testget():
+def createUser():
     
+    #if request.method  == 'OPTIONS':
+     #   return buildResponse()
+
     data = request.json
     values=[
     data.get('username'),
@@ -59,11 +63,37 @@ def select():
         print("select GET")
 
     #condition(where id=2 | where username='Henry')
-    return jsonify({"result": database.select(condition)})
+    return jsonify({"result": database.select(database, condition)})
+
+
+@app.route('/getoffertypes', methods=['GET'])
+def addinserate():
+
+    sqlresult = database.customCommand(database, 'select * from offer_types')
+
+    result = ''
+
+    for x in sqlresult:
+        print(x)
+        if x[1] != sqlresult[0][1]:
+            result+=','
+        result+=f"'result':'{x[1]}'"
+
+    return jsonify(result)
+
 
 @app.route('/', methods=['POST', 'GET'])
 def huansohn():
     return jsonify({"result": "fick dich!"})
+
+'''
+def buildResponse():
+    response = Flask.make_response(Flask, str(200))
+    response.headers.add("Access-Control-Allow-Origin", "*")
+    response.headers.add("Access-Control-Allow-Header", "*")
+    response.headers.add("Access-Control-Allow-Methods", "*")
+    return response
+'''
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
