@@ -32,10 +32,8 @@ namespace ShareDudesAdminTool
             checkBoxColumn.HeaderText = "Gebannt";
             checkBoxColumn.Name = "banned";
             dgv_user.Columns.Add(checkBoxColumn);
-
             //
             //
-            // Admin
             DataGridViewCheckBoxColumn checkBoxColumnAdmin = new DataGridViewCheckBoxColumn();
             checkBoxColumnAdmin.HeaderText = "Admin";
             checkBoxColumnAdmin.Name = "is_admin";
@@ -50,12 +48,6 @@ namespace ShareDudesAdminTool
                 dgv_user.Rows[0].Tag = item;
                 // var casting = (User)item;
             }
-
-            // Update database
-            dgv_user.CellContentClick += (sender, e) =>
-            {
-            
-            };
 
             //
             // Load offer array
