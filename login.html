@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="main.css">
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -47,14 +48,52 @@
   <h1>Willkommen zurück!</h1>
 </div>
 
-<form class="form-signin">
+<form class="form-signin" onsubmit="loginUser()">
     <h1 class="h3 mb-3 font-weight-normal">Melde dich an</h1>
     <input type="email" id="inputEmail" class="form-control" placeholder="Email Adresse" required="" autofocus="">
     <h1></h1> 
     <input type="password" id="inputPassword" class="form-control" placeholder="Passwort" required="">
     <h1></h1>
-    <button class="btn btn-lg btn-primary btn-block w-100" type="submit">Anmelden</button>
+    <button class="btn btn-lg btn-primary btn-block w-100">Anmelden</button>
 </form>
 
+<script>
+    function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function loginUser() {
+      var email = document.getElementById("inputEmail").value;
+      var password = document.getElementById("inputPassword").value;
+
+      var params = {
+       email: email,
+       password: password,
+       };
+      $.ajax({
+        type: 'POST',
+        url: 'http://194.62.1.218:5000/login',  // Die URL, an die der POST-Request gesendet wird
+        contentType: 'application/json',  // Der Content-Type der Anfrage (hier JSON)
+        data: JSON.stringify(params),  // Die Daten, die als JSON übertragen werden sollen
+        success: function(data) {
+          if(data.result){
+            setCookie("benutzername", name, 30);
+            alert("Erfolgreich angemeldet");
+            window.location.href = "index.html?#";
+          }
+          else {
+            alert("Login fehlgeschlagen");
+          }
+        },
+    });
+    }
+
+</script>
 </body>
 </html>

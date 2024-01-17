@@ -40,17 +40,17 @@
   <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
       <ul class="navbar-nav ms-auto align-center">
         <li class="nav-item">
-          <a class="nav-link active align-items-center" aria-current="page" href="login.html" id="logintext">Anmelden</a>
+          <a class="nav-link active align-items-center" aria-current="page" href="login.html?#" id="logintext">Anmelden</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active align-items-center" aria-current="page" href="register.html" id="registertext">Registrieren</a>
+          <a class="nav-link active align-items-center" aria-current="page" href="register.html?#" id="registertext">Registrieren</a>
         </li>
       </ul>
   </div>
 </nav>
 
 <div class="text-center p-2">
-  <button type="button" data-toggle="modal" data-target=".createModal" class="btn btn-lg btn-secondary" id="createButton">Eigenes Inserat veröffentlichen</button>
+  <button type="button" data-toggle="modal" data-target=".createModal" class="btn btn-lg btn-secondary" id="createButton" onclick="loadOptions()">Eigenes Inserat veröffentlichen</button>
 </div>
 
 <div class="modal fade createModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -58,39 +58,15 @@
     <div class="modal-content">
       <form class="form-signin p-3">
         <h1 class="h3 mb-3 font-weight-normal">Eigenes Inserat</h1>
-        <input type="Title" id="inputTitle" class="form-control" placeholder="Titel" required="" autofocus="">
+        <input type="Title" id="inputTitle" class="form-control" placeholder="Inserattitel" required="" autofocus="">
         <h1></h1> 
+        <label for="inputOfferTypes">Inseratart</label>
+        <select class="form-select" aria-label="Default select example" id = "inputOfferTypes"></select>
+        <h1></h1>
         <div class="form-group">
           <label for="DescriptionTextarea">Beschreibung für dein Inserat</label>
           <textarea class="form-control" id="DecriptionTextarea" rows="3"></textarea>
         </div>
-        <h1></h1>
-        <div class="row justify-content-center">
-        <div class="col-md-4 m-5 my-1">
-          <div class="mb-4 d-flex ml-auto">
-              <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-              alt="example placeholder" style="width: 300px;" />
-          </div>
-          <div class="d-flex">
-              <div class="btn btn-primary btn-rounded">
-                  <label class="form-label text-white m-1" for="customFile1">Bild 1 auswählen</label>
-                  <input type="file" class="form-control d-none" id="customFile1" onchange="displaySelectedImage(event, 'selectedImage')" />
-              </div>
-          </div>
-      </div>
-      <div class="col-md-4 m-5 my-1">
-        <div class="mb-4 d-flex">
-          <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-          alt="example placeholder" style="width: 300px;" />
-      </div>
-      <div class="d-flex">
-          <div class="btn btn-primary btn-rounded">
-              <input type="file" class="form-control d-none" id="customFile1" onchange="displaySelectedImage(event, 'selectedImage')" />
-              <label class="form-label text-white m-1" for="customFile1">Bild 2 auswählen</label>
-          </div>
-      </div>
-      </div>
-    </div>
         <h1></h1>
         <button class="btn btn-lg btn-secondary btn-block w-100" type="submit">Veröffentlichen</button>
       </form>
@@ -276,7 +252,7 @@
                 logoutbutton.textContent = 'Abmelden';
                 logoutbutton.onclick = function(){
                   removeCookie("benutzername");
-                }
+                };
                 logoutbutton.classList.add('btn-secondary', 'btn', 'my-2', 'm-1');
 
                 registerStatusTextElement.parentNode.replaceChild(logoutbutton, registerStatusTextElement);
@@ -301,6 +277,27 @@
         reader.readAsDataURL(fileInput.files[0]);
     }
 }
-          </script>
+
+function loadOptions() {
+  alert("der kommt hier rein");
+      var apiUrl = 'http://194.62.1.218:5000/getoffertypes';
+
+      var selectElement = document.getElementById("inputOfferType");
+      alert("request");
+      $.ajax({
+        url: apiUrl,
+        type: 'GET',
+        dataType: 'json',
+        complete: function(data) 
+        {
+          alert("complete ding");
+          var newOption = document.createElement("option");
+          newOption.value = 1;
+          newOption.text = "test";  
+        }
+      });
+      alert("request fertsch");
+    }
+</script>
 </body>
 </html>
