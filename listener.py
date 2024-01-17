@@ -16,14 +16,26 @@ def login():
     
     data = request.json
     values=[
-    data.get('username'),
+    data.get('email'),
     data.get('password'),
     ]
 
     result = 'false'
-    if(database.customCommand(database, 'select password from users where username=', values[0]) == common.hashPassword(values[1])):
+
+    print('email:' + str(values[0]))
+
+    hasheddbpassword = database.customCommand(database, "select password from users where email_address='"+str(values[0]) + "'")[0]
+
+    
+    print('db:' + hasheddbpassword[0])
+    hashedpsw = common.hashPassword(values[1])
+
+    print(hashedpsw)
+
+    if(hasheddbpassword[0] == hashedpsw):
         result = 'true'
 
+    print('login: ' + result)
     return jsonify({"result":result})
 
 @app.route('/createuser', methods=['POST'])
@@ -73,13 +85,12 @@ def addinserate():
 
     result = ''
 
-    for x in sqlresult:
-        print(x)
-        if x[1] != sqlresult[0][1]:
-            result+=','
-        result+=f"'result':'{x[1]}'"
-
-    return jsonify(result)
+    return jsonify({"value": sqlresult[0][1]},
+                   {"value": sqlresult[1][1]},
+                   {"value": sqlresult[2][1]},
+                   {"value": sqlresult[3][1]},
+                   {"value": sqlresult[4][1]},
+                   {"value": sqlresult[5][1]})
 
 
 @app.route('/', methods=['POST', 'GET'])
