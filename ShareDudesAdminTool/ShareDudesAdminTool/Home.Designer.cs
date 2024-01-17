@@ -81,10 +81,15 @@
             // 
             this.dgv_reports.AllowUserToAddRows = false;
             this.dgv_reports.AllowUserToDeleteRows = false;
+            this.dgv_reports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_reports.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_reports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_reports.Location = new System.Drawing.Point(7, 7);
             this.dgv_reports.Name = "dgv_reports";
             this.dgv_reports.ReadOnly = true;
+            this.dgv_reports.RowHeadersWidth = 10;
             this.dgv_reports.RowTemplate.Height = 25;
             this.dgv_reports.Size = new System.Drawing.Size(1164, 620);
             this.dgv_reports.TabIndex = 0;
@@ -103,10 +108,17 @@
             // 
             // dgv_offer
             // 
+            this.dgv_offer.AllowUserToAddRows = false;
+            this.dgv_offer.AllowUserToDeleteRows = false;
             this.dgv_offer.AllowUserToOrderColumns = true;
+            this.dgv_offer.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_offer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_offer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_offer.Location = new System.Drawing.Point(7, 7);
             this.dgv_offer.Name = "dgv_offer";
+            this.dgv_offer.RowHeadersWidth = 10;
             this.dgv_offer.RowTemplate.Height = 25;
             this.dgv_offer.Size = new System.Drawing.Size(1164, 620);
             this.dgv_offer.TabIndex = 0;
@@ -131,6 +143,7 @@
             this.dgv_user.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_user.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -141,13 +154,16 @@
             this.dgv_user.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_user.Location = new System.Drawing.Point(7, 7);
-            this.dgv_user.MultiSelect = false;
             this.dgv_user.Name = "dgv_user";
+            this.dgv_user.ReadOnly = true;
             this.dgv_user.RowHeadersWidth = 10;
             this.dgv_user.RowTemplate.Height = 25;
+            this.dgv_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_user.ShowEditingIcon = false;
             this.dgv_user.Size = new System.Drawing.Size(1164, 620);
             this.dgv_user.TabIndex = 1;
+            this.dgv_user.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_user_CellDoubleClick);
+            this.dgv_user.RowDividerDoubleClick += new System.Windows.Forms.DataGridViewRowDividerDoubleClickEventHandler(this.dgv_user_RowDividerDoubleClick);
             // 
             // userBindingSource
             // 

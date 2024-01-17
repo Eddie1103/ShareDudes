@@ -24,11 +24,8 @@ namespace ShareDudesAdminTool
             //
             var userCollection = new UserCollection();
             userCollection.LoadUser();
-
-
             //
             dgv_user.Columns.Add("username", "Benutzername");
-            dgv_user.Columns["username"].Width = 500;
             //
             //
             DataGridViewCheckBoxColumn checkBoxColumn = new DataGridViewCheckBoxColumn();
@@ -36,48 +33,29 @@ namespace ShareDudesAdminTool
             checkBoxColumn.Name = "banned";
             dgv_user.Columns.Add(checkBoxColumn);
 
-            // Update database
-            dgv_user.CellContentClick += (sender, e) =>
-            {
-                if (e.RowIndex >= 0 && e.ColumnIndex == dgv_user.Columns["banned"].Index)
-                {
-                    DataGridViewCheckBoxCell checkBoxCell = dgv_user.Rows[e.RowIndex].Cells["banned"] as DataGridViewCheckBoxCell;
-                    if (checkBoxCell != null)
-                    {
-                        bool newValue = !(bool)checkBoxCell.Value;
-                        checkBoxCell.Value = newValue;
-
-                        // updata database code
-                    }
-                }
-            };
             //
             //
+            // Admin
             DataGridViewCheckBoxColumn checkBoxColumnAdmin = new DataGridViewCheckBoxColumn();
             checkBoxColumnAdmin.HeaderText = "Admin";
             checkBoxColumnAdmin.Name = "is_admin";
             dgv_user.Columns.Add(checkBoxColumnAdmin);
 
             // Update database
-            dgv_user.CellContentClick += (sender, e) =>
-            {
-                if (e.RowIndex >= 0 && e.ColumnIndex == dgv_user.Columns["banned"].Index)
-                {
-                    DataGridViewCheckBoxCell checkBoxCell = dgv_user.Rows[e.RowIndex].Cells["banned"] as DataGridViewCheckBoxCell;
-                    if (checkBoxCell != null)
-                    {
-                        bool newValue = !(bool)checkBoxCell.Value;
-                        checkBoxCell.Value = newValue;
-                    }
-                    // updata database code
-                }
-            };
             //
 
             foreach (var item in userCollection.Users)
             {
                 dgv_user.Rows.Add(new[] { item.UserName, item.IsBanned.ToString(), item.IsAdmin.ToString() });
+                dgv_user.Rows[0].Tag = item;
+                // var casting = (User)item;
             }
+
+            // Update database
+            dgv_user.CellContentClick += (sender, e) =>
+            {
+            
+            };
 
             //
             // Load offer array
@@ -123,6 +101,24 @@ namespace ShareDudesAdminTool
             var login = new Login();
             login.Show();
   
+        }
+
+        private void dgv_user_RowDividerDoubleClick(object sender, DataGridViewRowDividerDoubleClickEventArgs e)
+        {
+            
+        }
+
+        private void dgv_user_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var selectedRow = dgv_user.SelectedRows[0];
+            // selectedRow.Tag;
+
+            using (var window = new UserEdit((User)selectedRow.Tag))
+            {
+                // window.parent
+                window.ShowDialog(this);
+            }
+
         }
 
         // Probably dead code

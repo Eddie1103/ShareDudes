@@ -14,16 +14,6 @@ namespace ShareDudesAdminTool
 
     }
 
-    private void Init(string schema)
-    {
-      Execute(_connection, "SET intervalstyle to iso_8601");
-      Execute(_connection, "SET LC_MONETARY='C'");
-      Execute(_connection, "SET lc_numeric='C'");
-      Execute(_connection, "SET lc_time='C'");
-      Execute(_connection, "SET search_path to " + schema + ",public");
-      Execute(_connection, "SET ssl_renegotiation_limit=0");
-    }
-
     private void Execute(NpgsqlConnection conn, string command)
     {
       var cmd = conn.CreateCommand();
@@ -49,7 +39,14 @@ namespace ShareDudesAdminTool
 
       var pg = "Server=" + host + ";Port=" + port + ";Database=" + databaseName + ";User Id=" + username + ";Password=" + password + ";";
       _connection = new NpgsqlConnection(pg);
-      _connection.Open();
+            try
+            {
+                _connection.Open();
+            }
+            catch
+            {
+                throw (new Exception("Failed to connect to server!"));
+            }
 
       _transaction = _connection.BeginTransaction();
 

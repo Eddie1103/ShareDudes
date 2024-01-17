@@ -31,12 +31,7 @@ namespace ShareDudesAdminTool
                 {
                     while (reader.Read())
                     {
-                        var user = new User();
-                        user.UserName = Database.GetStringValue(reader, "username");
-                        // user.IsBanned = Database.GetBoolValue(reader, "banned");
-                        user.IsAdmin = Database.GetBoolValue(reader, "is_admin");
-
-                        _users.Add (user);
+                        _users.Add(User.CreateUser(reader));
                     }
                 }
             }
