@@ -69,7 +69,14 @@
           <input type="Title" id="inputTitle" class="form-control" placeholder="Inserattitel" required="" autofocus="">
           <h1></h1>
           <label for="inputOfferTypes">Inseratart</label>
-          <select class="form-select" aria-label="Default select example" id="inputOfferTypes"></select>
+          <select class="form-select" aria-label="Default select example" id="inputOfferTypes">
+            <option value="1">Aktivitäten</option>
+            <option value="2">Verleih</option>
+            <option value="3">Bereitstellung</option>
+            <option value="4">Hilfsleistung</option>
+            <option value="5">Information</option>   
+            <option value="6">Information</option>         
+          </select>
           <h1></h1>
           <div class="form-group">
             <label for="DescriptionTextarea">Beschreibung für dein Inserat</label>
@@ -102,7 +109,7 @@
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Habe Rouladen übrig!</h5>
             <p class="card-text mb-4">Habe eine größere Portion gekocht aber der Hunger war größer als der Magen, würde so 3 Stück abgegeben!</p>
-            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
+            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter" onclick="loadInseratData('Habe Rouladen lol')">Zur Anzeige</a>
           </div>
         </div>
       </div>
@@ -200,6 +207,12 @@
   </div>
 
   <script>
+    function loadInseratData(inseratName) {
+      var x = document.getElementById("exampleModalLongTitle");
+      x.innerHTML(inseratName);
+      alert("test");
+    }
+
     function isUserLoggedIn(cookieName) {
       var cookies = document.cookie.split(';');
       for (var i = 0; i < cookies.length; i++) {
