@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Darkn\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Darkn\\.nuget\\packages"
+      "C:\\Users\\eloth.NT-TMP.000\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\eloth.NT-TMP.000\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

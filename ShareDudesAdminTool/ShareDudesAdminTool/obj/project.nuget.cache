@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QTNa5WNzfDb+XM20Ba11+BW1kYe9cLxYQW6JmPPok2Hqg3bJh4uHOKZitAdFGbMxjCYhIOpvT52tPVemRmVGBw==",
+  "dgSpecHash": "zsCSAq0ITxcnzXFY8ajdhry1PADWJ+1YFepJFkrUgs5b7kHFe2pwiBE1dyP/zscVDAH8XmCzCtL5x2AEIEew0Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\arschficker\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj",
+  "projectFilePath": "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\ShareDudes\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\eloth.NT-TMP.000\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\eloth.NT-TMP.000\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",

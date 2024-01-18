@@ -41,7 +41,7 @@
             this.tb_benutzer.Margin = new System.Windows.Forms.Padding(4);
             this.tb_benutzer.Name = "tb_benutzer";
             this.tb_benutzer.PlaceholderText = "Benutzer...";
-            this.tb_benutzer.Size = new System.Drawing.Size(477, 31);
+            this.tb_benutzer.Size = new System.Drawing.Size(477, 36);
             this.tb_benutzer.TabIndex = 1;
             this.tb_benutzer.TextChanged += new System.EventHandler(this.tb_benutzer_TextChanged);
             // 
@@ -52,7 +52,7 @@
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(221, 41);
-            this.button1.TabIndex = 2;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -64,25 +64,25 @@
             this.tb_password.Name = "tb_password";
             this.tb_password.PasswordChar = '*';
             this.tb_password.PlaceholderText = "Passwort...";
-            this.tb_password.Size = new System.Drawing.Size(477, 31);
-            this.tb_password.TabIndex = 3;
+            this.tb_password.Size = new System.Drawing.Size(477, 36);
+            this.tb_password.TabIndex = 2;
             this.tb_password.TextChanged += new System.EventHandler(this.tb_password_TextChanged);
             // 
             // lb_headline
             // 
             this.lb_headline.AutoSize = true;
             this.lb_headline.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lb_headline.Location = new System.Drawing.Point(306, 148);
+            this.lb_headline.Location = new System.Drawing.Point(289, 146);
             this.lb_headline.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_headline.Name = "lb_headline";
-            this.lb_headline.Size = new System.Drawing.Size(274, 45);
+            this.lb_headline.Size = new System.Drawing.Size(346, 58);
             this.lb_headline.TabIndex = 5;
             this.lb_headline.Text = "Admintool Login";
             this.lb_headline.Click += new System.EventHandler(this.lb_headline_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(921, 603);
             this.Controls.Add(this.lb_headline);

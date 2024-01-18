@@ -441,11 +441,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\arschficker\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj",
+      "projectUniqueName": "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\ShareDudes\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj",
       "projectName": "ShareDudesAdminTool",
-      "projectPath": "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\arschficker\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj",
+      "projectPath": "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\ShareDudes\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj",
       "packagesPath": "C:\\Users\\eloth.NT-TMP.000\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\arschficker\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\obj\\",
+      "outputPath": "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\ShareDudes\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\eloth.NT-TMP.000\\AppData\\Roaming\\NuGet\\NuGet.Config",
