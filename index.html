@@ -19,6 +19,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
     integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
     crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -75,7 +76,7 @@
             <option value="3">Bereitstellung</option>
             <option value="4">Hilfsleistung</option>
             <option value="5">Information</option>   
-            <option value="6">Information</option>         
+            <option value="6">Schenkung</option>         
           </select>
           <h1></h1>
           <div class="form-group">
@@ -105,47 +106,22 @@
     <div class="row justify-content-center no-gutters m-2 p-1">
       <div class="col-lg-4 mb-3 mx-3 d-flex align-items-stretch">
         <div class="card">
-          <img src="https://bbq-piraten.de/community/data/attachments/351/351068-07b61497a93c18894bdb5a9aa675b686.jpg" class="card-img-top" alt="Card Image">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Habe Rouladen übrig!</h5>
-            <p class="card-text mb-4">Habe eine größere Portion gekocht aber der Hunger war größer als der Magen, würde so 3 Stück abgegeben!</p>
-            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter" onclick="loadInseratData('Habe Rouladen lol')">Zur Anzeige</a>
+          <img src="https://bbq-piraten.de/community/data/attachments/351/351068-07b61497a93c18894bdb5a9aa675b686.jpg" id="pic1" class="card-img-top" alt="Card Image">
+          <div class="card-body d-flex flex-column" onclick="loadInseratData($('#title1').text(), $('#text1').text(), $('#pic1').prop('src'))">
+            <h5 class="card-title" id="title1">Habe Rouladen übrig!</h5>
+            <p class="card-text mb-4" id="text1">Habe eine größere Portion gekocht aber der Hunger war größer als der Magen, würde so 3 Stück abgegeben!</p>
+            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#showModal">Zur Anzeige</a>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 mb-3 mx-3 d-flex align-items-stretch">
         <div class="card">
-          <img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/e2/e27767ff-fadb-4430-9d68-c9beec8f9ecf?rule=$_59.JPG" class="card-img-top" alt="Card Image">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Waschmaschine zu verleihen</h5>
-            <p class="card-text mb-4">Hallo, ich würde gerne meine Waschmaschine zur Verfügung stellen während ich im Urlaub bin, einfach anfragen!</p>
-            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
-          </div>
-        </div>
-      </div>
-
-
-
-    <div class="row justify-content-center m-2 p-1">
-      <div class="col-lg-4 mb-3 mx-3 d-flex align-items-stretch">
-        <div class="card">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Schrebergarten_1.jpg" class="card-img-top" alt="Card Image">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Gartenbeet frei!</h5>
-            <p class="card-text mb-4">Hallihallo, habe in meinem Garten noch ein Beet frei, zuletzt waren dort Tomaten gepflanzt aber dieses Jahr habe ich keine Lust. Wenn jemand an diesem Platz anpflanzen möchte einfach melden!</p>
-            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 mb-3 mx-3 d-flex align-items-stretch">
-        <div class="card">
-          <img src="https://www.zooroyal.de/magazin/wp-content/uploads/2017/08/hund-in-der-spaziergang-760x570.jpg" class="card-img-top" alt="Card Image">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Linus brauch einen Aufpasser</h5>
-            <p class="card-text mb-4">Hey Community, mein Hund Linus ist eine Woche auf sich allein gestellt da ich im Urlaub bin, bevor ich Angehörige nerve, frage ich ob sich hier vielleicht jemand findet! Mehr Infos nach Anfrage.</p>
-            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
+          <img src="https://img.kleinanzeigen.de/api/v1/prod-ads/images/e2/e27767ff-fadb-4430-9d68-c9beec8f9ecf?rule=$_59.JPG" class="card-img-top" alt="Card Image" id="pic2">
+          <div class="card-body d-flex flex-column" onclick="loadInseratData(document.getElementById('title2').innerText, document.getElementById('text2').innerText, document.getElementById('pic2').src)">
+            <h5 class="card-title" id="title2">Waschmaschine zu verleihen</h5>
+            <p class="card-text mb-4" id="text2">Hallo, ich würde gerne meine Waschmaschine zur Verfügung stellen während ich im Urlaub bin, einfach anfragen!</p>
+            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#showModal">Zur Anzeige</a>
           </div>
         </div>
       </div>
@@ -155,22 +131,47 @@
     <div class="row justify-content-center m-2 p-1">
       <div class="col-lg-4 mb-3 mx-3 d-flex align-items-stretch">
         <div class="card">
-          <img src="https://cdn.germanscooterforum.de/monthly_04_2008/post-5890-1207589007_thumb.jpg" class="card-img-top" alt="Card Image">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Verschenke rostige Mühle</h5>
-            <p class="card-text mb-4">Kein Bock mehr auf das Fahrrad in meinem Keller, steht nur rum und nimmt Platz weg. Wer es gerne haben möchte meldet sich.</p>
-            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Schrebergarten_1.jpg" class="card-img-top" alt="Card Image" id="pic3">
+          <div class="card-body d-flex flex-column" onclick="loadInseratData(document.getElementById('title3').innerText, document.getElementById('text3').innerText, document.getElementById('pic3').src)">
+            <h5 class="card-title" id="title3">Gartenbeet frei!</h5>
+            <p class="card-text mb-4" id="text3">Hallihallo, habe in meinem Garten noch ein Beet frei, zuletzt waren dort Tomaten gepflanzt aber dieses Jahr habe ich keine Lust. Wenn jemand an diesem Platz anpflanzen möchte einfach melden!</p>
+            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#showModal">Zur Anzeige</a>
           </div>
         </div>
       </div>
 
       <div class="col-lg-4 mb-3 mx-3 d-flex align-items-stretch">
         <div class="card">
-          <img src="https://light-microscope.net/wp-content/uploads/2019/05/Steroanlage.jpg" class="card-img-top" alt="Card Image">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Alte Musikanlage kaputt</h5>
-            <p class="card-text mb-4">Meine alte Stereoanlage macht Probleme, kann jemand mit Kentnissen mir helfen? Entlohnung folgt Selbstverständlich.</p>
-            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#exampleModalCenter">Zur Anzeige</a>
+          <img src="https://www.zooroyal.de/magazin/wp-content/uploads/2017/08/hund-in-der-spaziergang-760x570.jpg" class="card-img-top" alt="Card Image" id="pic4">
+          <div class="card-body d-flex flex-column" onclick="loadInseratData(document.getElementById('title4').innerText, document.getElementById('text4').innerText, document.getElementById('pic4').src)">
+            <h5 class="card-title" id="title4">Linus brauch einen Aufpasser</h5>
+            <p class="card-text mb-4" id="text4">Hey Community, mein Hund Linus ist eine Woche auf sich allein gestellt da ich im Urlaub bin, bevor ich Angehörige nerve, frage ich ob sich hier vielleicht jemand findet! Mehr Infos nach Anfrage.</p>
+            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#showModal">Zur Anzeige</a>
+          </div>
+        </div>
+      </div>
+
+
+
+    <div class="row justify-content-center m-2 p-1">
+      <div class="col-lg-4 mb-3 mx-3 d-flex align-items-stretch">
+        <div class="card">
+          <img src="https://cdn.germanscooterforum.de/monthly_04_2008/post-5890-1207589007_thumb.jpg" class="card-img-top" alt="Card Image" id="pic5">
+          <div class="card-body d-flex flex-column" onclick="loadInseratData(document.getElementById('title5').innerText, document.getElementById('text5').innerText, document.getElementById('pic5').src)">
+            <h5 class="card-title" id="title5">Verschenke rostige Mühle</h5>
+            <p class="card-text mb-4" id="text5">Kein Bock mehr auf das Fahrrad in meinem Keller, steht nur rum und nimmt Platz weg. Wer es gerne haben möchte meldet sich.</p>
+            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#showModal">Zur Anzeige</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mb-3 mx-3 d-flex align-items-stretch">
+        <div class="card">
+          <img src="https://light-microscope.net/wp-content/uploads/2019/05/Steroanlage.jpg" class="card-img-top" alt="Card Image" id="pic6">
+          <div class="card-body d-flex flex-column" onclick="loadInseratData(document.getElementById('title6').innerText, document.getElementById('text6').innerText, document.getElementById('pic6').src)">
+            <h5 class="card-title" id="title6">Alte Musikanlage kaputt</h5>
+            <p class="card-text mb-4" id="text6">Meine alte Stereoanlage macht Probleme, kann jemand mit Kentnissen mir helfen? Entlohnung folgt Selbstverständlich.</p>
+            <a class="btn btn-primary stretched-link" data-toggle="modal" data-target="#showModal">Zur Anzeige</a>
           </div>
         </div>
       </div>
@@ -178,22 +179,22 @@
 
 
     <!--Modal zum Angebot anzeigen-->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+    <div class="modal fade" id="showModal" tabindex="-1" role="dialog"
       aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Habe Rouladen übrig!</h5>
+            <h5 class="modal-title" id="modalTitle">Habe Rouladen übrig!</h5>
             <button type="button" class="btn-close" aria-label="Close" data-dismiss="modal"></button>
           </div>
           <div class="modal-body">
             <div class="row row-no-margin">
               <div class="col-xs-12 col-sm-6 mx-auto w-100">
                 <img
-                  src="https://bbq-piraten.de/community/data/attachments/351/351068-07b61497a93c18894bdb5a9aa675b686.jpg" class="rounded" alt="...">
+                loading="lazy" src="https://bbq-piraten.de/community/data/attachments/351/351068-07b61497a93c18894bdb5a9aa675b686.jpg" class="rounded" alt="..." id="modalPic">
               </div>
             </div>
-            <div class="p-3 row row-no-margin">
+            <div class="p-3 row row-no-margin" id="modalText">
               Habe eine größere Portion gekocht aber der Hunger war größer als der Magen, würde so 3 Stück abgegeben!
             </div>
           </div>
@@ -207,10 +208,16 @@
   </div>
 
   <script>
-    function loadInseratData(inseratName) {
-      var x = document.getElementById("exampleModalLongTitle");
-      x.innerHTML(inseratName);
-      alert("test");
+    function loadInseratData(inseratTitle, inseratText, inseratPic) {
+      var title = $("#modalTitle");
+      title.text(inseratTitle);
+
+      var text = $("#modalText");
+      text.text(inseratText);
+
+      var pic = $('#modalPic');
+      pic.prop('src', inseratPic);
+      console.log(inseratTitle, inseratText, inseratPic);
     }
 
     function isUserLoggedIn(cookieName) {
