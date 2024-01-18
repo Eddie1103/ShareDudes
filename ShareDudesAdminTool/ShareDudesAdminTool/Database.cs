@@ -187,12 +187,12 @@ namespace ShareDudesAdminTool
 
     public static bool GetBoolValue(NpgsqlDataReader reader, string columnName)
     {
-      return (bool)reader[columnName];
+     return reader.GetBoolean(reader.GetOrdinal(columnName));
     }
 
     public static string GetStringValue(NpgsqlDataReader reader, string columnName)
     {
-      return reader[columnName].ToString();
+      return reader.GetString(reader.GetOrdinal(columnName));
     }
 
     public static int GetIntValue(NpgsqlDataReader reader, string columnName)

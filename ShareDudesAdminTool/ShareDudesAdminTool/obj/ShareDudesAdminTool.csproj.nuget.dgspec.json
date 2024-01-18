@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Darkn\\OneDrive\\Dokumente\\GitHub\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj": {}
+    "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\arschficker\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Darkn\\OneDrive\\Dokumente\\GitHub\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj": {
+    "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\arschficker\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Darkn\\OneDrive\\Dokumente\\GitHub\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj",
+        "projectUniqueName": "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\arschficker\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj",
         "projectName": "ShareDudesAdminTool",
-        "projectPath": "C:\\Users\\Darkn\\OneDrive\\Dokumente\\GitHub\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj",
-        "packagesPath": "C:\\Users\\Darkn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Darkn\\OneDrive\\Dokumente\\GitHub\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\obj\\",
+        "projectPath": "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\arschficker\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\ShareDudesAdminTool.csproj",
+        "packagesPath": "C:\\Users\\eloth.NT-TMP.000\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\eloth.NT-TMP.000\\source\\repos\\arschficker\\ShareDudes\\ShareDudesAdminTool\\ShareDudesAdminTool\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Darkn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\eloth.NT-TMP.000\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows7.0"
+          "net6.0-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -51,7 +51,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -63,7 +64,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
