@@ -126,9 +126,9 @@
 
     $.ajax({
         type: 'POST',
-        url: 'http://194.62.1.218:5000/createuser',  // Die URL, an die der POST-Request gesendet wird
-        contentType: 'application/json',  // Der Content-Type der Anfrage (hier JSON)
-        data: JSON.stringify(params),  // Die Daten, die als JSON übertragen werden sollen
+        url: 'http://194.62.1.218:5000/createuser',  
+        contentType: 'application/json', 
+        data: JSON.stringify(params), 
         complete: function(responseData) {
           setCookie("benutzername", name, 30);
           alert("Erfolgreich Registriert!");
