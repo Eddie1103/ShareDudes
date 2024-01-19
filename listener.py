@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import psycopg2
 import common
+from PIL import Image
 from database import Database
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -24,25 +25,22 @@ def login():
 
     print('email:' + str(values[0]))
 
-    hasheddbpassword = database.customCommand(database, "select password from users where email_address='"+str(values[0]) + "'")[0]
+    sqlresult = database.customCommand(database, "select user_id, password from users where email_address='"+str(values[0]) + "'")[0]
 
     
-    print('db:' + hasheddbpassword[0])
+    print('db:' + sqlresult[1])
     hashedpsw = common.hashPassword(values[1])
 
     print(hashedpsw)
 
-    if(hasheddbpassword[0] == hashedpsw):
+    if(sqlresult[1] == hashedpsw):
         result = 'true'
 
     print('login: ' + result)
-    return jsonify({"result":result})
+    return jsonify({'result': result, "userid":sqlresult[0]})
 
 @app.route('/createuser', methods=['POST'])
 def createUser():
-    
-    #if request.method  == 'OPTIONS':
-     #   return buildResponse()
 
     data = request.json
     values=[
@@ -61,7 +59,7 @@ def createUser():
 
     print("createuser POST")
 
-    return jsonify({"result":database.createUser(database, values)})
+    return jsonify({"userid":database.createUser(database, values)})
 
 @app.route('/select', methods=['POST', 'GET'])
 def select():
@@ -79,39 +77,66 @@ def select():
 
 
 @app.route('/getoffertypes', methods=['GET'])
-def addinserate():
+def getoffertypes():
 
     sqlresult = database.customCommand(database, 'select * from offer_types')
 
-    result = ''
+    result = []
 
-    return jsonify({"value": sqlresult[0][1]},
-                   {"value": sqlresult[1][1]},
-                   {"value": sqlresult[2][1]},
-                   {"value": sqlresult[3][1]},
-                   {"value": sqlresult[4][1]},
-                   {"value": sqlresult[5][1]})
+    for type in sqlresult:
+        result+={"id": type[0], "value": type[1]},
 
+    return jsonify(result)
+
+
+@app.route('/addinserate', methods=['POST'])
+def addinserate():
+
+    image_file = request.files.get('image')
+    if not image_file:
+        return jsonify({"error": "No image provided"}), 400
+
+    data = request.json
+    values=[
+    data.get('title'),
+    data.get('text'),
+    data.get('user_id'),
+    data.get('address_id'),
+    data.get('offer_type_id')
+    ]
+
+    img = Image.open(image_file)
+    sqlresult = database.customCommand(database, 'insert into offers(title, text, user_id, address_id, offer_type_id) values(' + values[0] + ',' + values[1] + ',' + values[2] + ',' + values[3] + ',' + values[4] +')')
+    img.save(f'/var/www/html/pictures/inserate/{sqlresult[0]}.PNG')
+
+    return jsonify(sqlresult[0])
+
+@app.route('/getinserate', methods=['GET'])
+def getinserate():
+    
+    sqlresult = database.customCommand(database, 'SELECT * FROM offers ORDER BY RANDOM() LIMIT 6;')
+
+    result = []
+
+    for type in sqlresult:
+        result+={"id": type[0], "title": type[1], 'text': type[2]},
+
+    return jsonify(result)
+
+@app.route('/getmainaddressid', methods=['GET'])
+def getmainaddressid():
+    data = request.json
+    values=[
+        data.get('user_id')
+    ]
+
+    sqresult = database.customCommand(database, 'select address_id where user_id=' + values[0] + ' AND is_main=true')
+
+    return jsonify(sqresult[0])
 
 @app.route('/', methods=['POST', 'GET'])
 def huansohn():
     return jsonify({"result": "fick dich!"})
 
-'''
-def buildResponse():
-    response = Flask.make_response(Flask, str(200))
-    response.headers.add("Access-Control-Allow-Origin", "*")
-    response.headers.add("Access-Control-Allow-Header", "*")
-    response.headers.add("Access-Control-Allow-Methods", "*")
-    return response
-'''
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
-    
-
-    #get userinformation
-
-    #createuser
-
-    #customcommand

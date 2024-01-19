@@ -75,7 +75,8 @@ class Database:
                    (values[5], values[6], values[7], values[8], values[9], True, userid))
 
         self.dbase.commit()
-        return 'success'
+        print("DEBUGUSERID:" + str(userid))
+        return str(userid)
         
 
     def customCommand(self, value):
