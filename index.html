@@ -66,17 +66,18 @@
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <form class="form-signin p-3">
+        <form class="form-signin p-3" onsubmit="postInserat()">
           <h1 class="h3 mb-3 font-weight-normal">Eigenes Inserat</h1>
           <input type="Title" id="inputTitle" class="form-control" placeholder="Inserattitel" required="" autofocus="">
           <h1></h1>
+          <select class="form-select" aria-label="Default select example" id="inputAdresses"></select>
+          <h1></h1>
           <label for="inputOfferTypes">Inseratart</label>
-          <select class="form-select" aria-label="Default select example" id="inputOfferTypes">
-          </select>
+          <select class="form-select" aria-label="Default select example" id="inputOfferTypes"></select>
           <h1></h1>
           <div class="form-group">
             <label for="DescriptionTextarea">Beschreibung für dein Inserat</label>
-            <textarea class="form-control" id="DecriptionTextarea" rows="3"></textarea>
+            <textarea class="form-control" id="descriptionTextarea" rows="3"></textarea>
           </div>
           <h1></h1>
           <div class="col-md-4 m-5 my-1">
@@ -149,11 +150,19 @@
       location.reload();
     }
 
+    function postInserat()
+    {
+      var title = $("#inputTitle").value;
+      var offertype = $("#inputOfferTypes").value;
+      var descriptionTextarea = $("#descriptionTextarea").value;
+      var selectedImage = $("selectedImage").value;
+    }
+
     function updateLoginStatusText() {
       var loginStatusTextElement = document.getElementById('logintext');
       var registerStatusTextElement = document.getElementById('registertext');
 
-      if (isUserLoggedIn("benutzername")) {
+      if (isUserLoggedIn("userid")) {
         var imgElement = document.createElement('img');
         imgElement.src = 'https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=50&h=50&q=60';
         imgElement.alt = 'Profilbild';
@@ -168,7 +177,7 @@
         var logoutbutton = document.createElement('button');
         logoutbutton.textContent = 'Abmelden';
         logoutbutton.onclick = function () {
-          removeCookie("benutzername");
+          removeCookie("userid");
         };
         logoutbutton.classList.add('btn-secondary', 'btn', 'my-2', 'm-1');
 
