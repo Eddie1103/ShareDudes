@@ -24,7 +24,7 @@ namespace ShareDudesAdminTool
             //
             var userCollection = new UserCollection();
             userCollection.LoadUser();
-            //
+            
             dgv_user.Columns.Add("username", "Benutzername");
             //
             //
@@ -39,9 +39,7 @@ namespace ShareDudesAdminTool
             checkBoxColumnAdmin.Name = "is_admin";
             dgv_user.Columns.Add(checkBoxColumnAdmin);
 
-            // Update database
-            //
-
+            // Insert data
             foreach (var item in userCollection.Users)
             {
                 dgv_user.Rows.Add(new[] { item.UserName, item.IsBanned.ToString(), item.IsAdmin.ToString() });
