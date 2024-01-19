@@ -134,6 +134,22 @@ def getmainaddressid():
 
     return jsonify(sqresult[0])
 
+@app.route('/getaddresses', methods=['GET'])
+def getaddresses():
+    data = request.json
+    values=[
+        data.get('user_id')
+    ]
+
+    sqlresult = database.customCommand(database, 'select * from address where user_id=' + values[0])
+
+    result = []
+
+    for type in sqlresult:
+        result+={"id": type[0], "value": type[2] + type[3]+ type[6] + type[4]},
+
+    return jsonify(result)
+
 @app.route('/', methods=['POST', 'GET'])
 def huansohn():
     return jsonify({"result": "fick dich!"})
