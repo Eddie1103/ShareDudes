@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var jsonData = [
         {
-            title: "Habe Rouladen übrig!",
+            title: "Habe Rouladen übrig! ",
             text: "Habe eine größere Portion gekocht aber der Hunger war größer als der Magen, würde so 3 Stück abgegeben!",
             pic: "https://bbq-piraten.de/community/data/attachments/351/351068-07b61497a93c18894bdb5a9aa675b686.jpg"
         },
@@ -33,38 +33,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     ];
 
-
-    // Container für die Bootstrap-Karten
     var cardContainer = document.getElementById('cardContainer');
-
     cardContainer.innerHTML = '';
 
-
-    // Schleife durch das JSON-Array und erstelle Bootstrap-Karten in Gruppen von je zwei Karten
     for (var i = 0; i < jsonData.length; i += 2) {
-        // Bootstrap-Row für jede Gruppe von Karten
         var cardRow = document.createElement('div');
         cardRow.className = 'row justify-content-center no-gutters m-2 p-1';
 
-        // Erste Karte in der Gruppe
-        var card1 = createCard(jsonData[i], i);
+        var card1 = createCard(jsonData[i]);
         var col1 = createColumn(card1);
         cardRow.appendChild(col1);
-
-        // Überprüfen, ob es eine zweite Karte in der Gruppe gibt
+        
         if (i + 1 < jsonData.length) {
-            // Zweite Karte in der Gruppe
-            var card2 = createCard(jsonData[i + 1], i+1);
+            var card2 = createCard(jsonData[i + 1]);
             var col2 = createColumn(card2);
             cardRow.appendChild(col2);
         }
 
-        // Füge die Bootstrap-Row zum Container hinzu
         cardContainer.appendChild(cardRow);
     }
 
-    // Funktion zum Erstellen einer Bootstrap-Karte
-    function createCard(data, index) {
+    function createCard(data) {
         var card = document.createElement('div');
         card.className = 'card';
 

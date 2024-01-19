@@ -72,12 +72,6 @@
           <h1></h1>
           <label for="inputOfferTypes">Inseratart</label>
           <select class="form-select" aria-label="Default select example" id="inputOfferTypes">
-            <option value="1">Aktivitäten</option>
-            <option value="2">Verleih</option>
-            <option value="3">Bereitstellung</option>
-            <option value="4">Hilfsleistung</option>
-            <option value="5">Information</option>
-            <option value="6">Schenkung</option>
           </select>
           <h1></h1>
           <div class="form-group">
@@ -187,7 +181,6 @@
     }
     updateLoginStatusText();
 
-    //im moment unbenutzt
     function displaySelectedImage(event, elementId) {
       const selectedImage = document.getElementById(elementId);
       const fileInput = event.target;
@@ -206,19 +199,22 @@
     function loadOptions() {
       var apiUrl = 'http://194.62.1.218:5000/getoffertypes';
 
-      var selectElement = document.getElementById("inputOfferType");
+      var selectElement = document.getElementById('inputOfferTypes');
+      selectElement.innerHTML = '';
       $.ajax({
         url: apiUrl,
         type: 'GET',
         dataType: 'json',
-        complete: function (data) {
-          alert("complete ding");
-          var newOption = document.createElement("option");
-          newOption.value = 1;
-          newOption.text = "test";
-        }
+        success: function (data) {
+          $.each(data, function(index, item) 
+          {
+            var newOption = document.createElement('option');
+            newOption.value = item.id;
+            newOption.text = item.value;
+            selectElement.appendChild(newOption);
+          });
+      }
       });
-      alert("request fertsch");
     }
   </script>
 </body>
