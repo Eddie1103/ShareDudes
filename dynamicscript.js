@@ -53,7 +53,8 @@ function HandleResponse(data){
         cardText.textContent = data.text;
 
         var cardPic = document.createElement('img');
-        cardPic.src = data.image_base64;
+        alert('http://194.62.1.218/pictures/inserate/'+data.id+'.png');
+        cardPic.src = 'http://194.62.1.218/pictures/inserate/'+data.id+'.png';
         cardPic.classname = 'card-img-top';
 
         var cardButton = document.createElement('a');

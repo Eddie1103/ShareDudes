@@ -235,7 +235,6 @@
 
     function getCookieValue(cookieName) {
       const cookies = document.cookie;
-
       const cookieArray = cookies.split('; ');
 
       for (let i = 0; i < cookieArray.length; i++) {
@@ -272,7 +271,6 @@
 
     function loadInserate(objectid, userid) {
       var apiUrl = 'http://194.62.1.218:5000/getaddresses';
-
       var selectElement = document.getElementById(objectid);
       selectElement.innerHTML = '';
 
