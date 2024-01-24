@@ -92,22 +92,18 @@ def getoffertypes():
 @app.route('/addinserate', methods=['POST'])
 def addinserate():
 
-    image_file = request.files.get('image')
-    if not image_file:
-        return jsonify({"error": "No image provided"}), 400
-
     data = request.json
     values=[
     data.get('title'),
     data.get('text'),
     data.get('user_id'),
     data.get('address_id'),
-    data.get('offer_type_id')
+    data.get('offer_type_id'),
+    data.get('image_base64')
     ]
 
-    img = Image.open(image_file)
-    sqlresult = database.customCommand(database, 'insert into offers(title, text, user_id, address_id, offer_type_id) values(' + values[0] + ',' + values[1] + ',' + values[2] + ',' + values[3] + ',' + values[4] +')')
-    img.save(f'/var/www/html/pictures/inserate/{sqlresult[0]}.PNG')
+    database.customCommandInsert(database, "insert into offers(title, text, user_id, address_id, offer_type_id, image_base64) values('" + values[0] + "','" + values[1] + "'," + values[2] + "," + values[3] + "," + values[4] +",'" + values[5] + "')")
+    sqlresult = database.customCommand(database, 'select offer_id from offers order by offer_id DESC LIMIT 1')
 
     return jsonify(sqlresult[0])
 
@@ -119,7 +115,7 @@ def getinserate():
     result = []
 
     for type in sqlresult:
-        result+={"id": type[0], "title": type[1], 'text': type[2]},
+        result+={"id": type[0], "title": type[1], 'text': type[2], 'image_base64': type[6]},
 
     return jsonify(result)
 

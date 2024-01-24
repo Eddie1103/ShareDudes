@@ -88,4 +88,11 @@ class Database:
         #self.dbase.commit()
         return cur.fetchall()
 
+    def customCommandInsert(self, value):
+        sqlcommand = f'{value};'
+
+        db=self.dbase
+        cur=db.cursor()
+        cur.execute(sqlcommand)
+        #self.dbase.commit()
 
