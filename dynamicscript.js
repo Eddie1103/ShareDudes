@@ -62,7 +62,7 @@ function HandleResponse(data){
         cardButton.setAttribute('data-toggle', 'modal');
         cardButton.setAttribute('data-target', '#showModal');
 
-        cardBody.onclick = function(){ loadInseratData(data.title, data.text, data.pic) };
+        cardBody.onclick = function(){ loadInseratData(data.title, data.text, cardPic.src) };
 
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText);
