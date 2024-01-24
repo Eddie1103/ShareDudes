@@ -105,7 +105,7 @@ def addinserate():
     database.customCommandInsert(database, "insert into offers(title, text, user_id, address_id, offer_type_id, image_base64) values('" + values[0] + "','" + values[1] + "'," + values[2] + "," + values[3] + "," + values[4] +",'" + values[5] + "')")
     sqlresult = database.customCommand(database, 'select offer_id from offers order by offer_id DESC LIMIT 1')
 
-    return jsonify(sqlresult[0])
+    return jsonify({"result" : sqlresult[0]})
 
 @app.route('/getinserate', methods=['GET'])
 def getinserate():

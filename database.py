@@ -94,5 +94,6 @@ class Database:
         db=self.dbase
         cur=db.cursor()
         cur.execute(sqlcommand)
-        #self.dbase.commit()
+        self.dbase.commit()
+        return True
 
