@@ -57,7 +57,7 @@ function HandleResponse(data){
         cardPic.classname = 'card-img-top';
 
         var cardButton = document.createElement('a');
-        cardButton.className = 'btn btn-primary stretched-link';
+        cardButton.className = 'btn btn-primary stretched-link mt-auto';
         cardButton.innerText = 'Zur Anzeige';
         cardButton.setAttribute('data-toggle', 'modal');
         cardButton.setAttribute('data-target', '#showModal');
