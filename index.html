@@ -91,7 +91,8 @@
             <div class="d-flex">
               <div class="btn btn-primary btn-rounded">
                 <label class="form-label text-white m-1" for="customFile1">Bild auswählen</label>
-                <input type="file" class="form-control d-none" accept=".png, .jpg, .jpeg, .jfif" id="customFile1" onchange="displaySelectedImage(event, 'selectedImage')" />
+                <input type="file" class="form-control d-none" accept=".png, .jpg, .jpeg, .jfif" id="customFile1"
+                  onchange="displaySelectedImage(event, 'selectedImage')" />
               </div>
             </div>
           </div>
@@ -170,14 +171,14 @@
 
       $.ajax({
         url: apiUrl,
-        headers: { 
-        'Accept': 'application/json',
-        'Content-Type': 'application/json' 
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
         },
         type: 'POST',
         dataType: 'json',
         data: JSON.stringify(params),
-        processData: false, 
+        processData: false,
         success: function (data) {
           alert("Inserat veröffentlicht!");
           location.reload();
@@ -232,6 +233,22 @@
       }
     }
 
+    function getCookieValue(cookieName) {
+      const cookies = document.cookie;
+
+      const cookieArray = cookies.split('; ');
+
+      for (let i = 0; i < cookieArray.length; i++) {
+        const cookie = cookieArray[i].split('=');
+
+        if (cookie[0] === cookieName) {
+          return cookie[1];
+        }
+      }
+
+      return null;
+    }
+
     function loadOptions(objectid) {
       var apiUrl = 'http://194.62.1.218:5000/getoffertypes';
 
@@ -265,9 +282,9 @@
 
       $.ajax({
         url: apiUrl,
-        headers: { 
-        'Accept': 'application/json',
-        'Content-Type': 'application/json' 
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
         },
         type: 'POST',
         dataType: 'json',

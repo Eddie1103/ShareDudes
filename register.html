@@ -129,20 +129,20 @@
         birthdate: birthdate,
         is_admin: "true",
       };
+      -
 
-      $.ajax({
-        type: 'POST',
-        url: 'http://194.62.1.218:5000/createuser',
-        contentType: 'application/json',
-        data: JSON.stringify(params),
-        dataType: 'json',
-        success : function (data) {
-          alert(data.userid);
-          setCookie("userid", data.userid, 30);
-          alert("Erfolgreich Registriert!");
-          window.location.href = "index.html?#";
-        }
-      });
+        $.ajax({
+          type: 'POST',
+          url: 'http://194.62.1.218:5000/createuser',
+          contentType: 'application/json',
+          data: JSON.stringify(params),
+          dataType: 'json',
+          success: function (data) {
+            setCookie("userid", data.userid, 30);
+            alert("Erfolgreich Registriert!");
+            window.location.href = "index.html?#";
+          }
+        });
     }
   </script>
 </body>
