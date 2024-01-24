@@ -123,7 +123,7 @@ def addinserate():
 @app.route('/getinserate', methods=['GET'])
 def getinserate():
     
-    sqlresult = database.customCommand(database, 'SELECT * FROM offers ORDER BY RANDOM() LIMIT 6;')
+    sqlresult = database.customCommand(database, 'SELECT * FROM offers;')
 
     result = []
 
