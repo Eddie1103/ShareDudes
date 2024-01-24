@@ -160,8 +160,6 @@
       var descriptionTextarea = document.getElementById("descriptionTextarea").value;
       var selectedImage = document.getElementById("selectedImage").src;
 
-      var scaledDownImage = scaleAndEncodeImage(selectedImage);
-
       var params = {
         title: inputTitle,
         text: descriptionTextarea,
@@ -196,8 +194,8 @@
       var canvas = document.createElement('canvas');
       var ctx = canvas.getContext('2d');
 
-      var targetWidth = 1024;
-      var targetHeight = 768;
+      var targetWidth = 1920;
+      var targetHeight = 1080;
 
       canvas.width = targetWidth;
       canvas.height = targetHeight;
