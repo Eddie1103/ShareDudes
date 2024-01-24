@@ -81,7 +81,7 @@ class Database:
 
     def customCommand(self, value):
         sqlcommand = f'{value};'
-
+        
         db=self.dbase
         cur=db.cursor()
         cur.execute(sqlcommand)

@@ -1,6 +1,7 @@
 #!/usr/bin/python
-import psycopg2
+import base64
 import common
+import io
 from PIL import Image
 from database import Database
 from flask import Flask, request, jsonify
@@ -102,8 +103,20 @@ def addinserate():
     data.get('image_base64')
     ]
 
-    database.customCommandInsert(database, "insert into offers(title, text, user_id, address_id, offer_type_id, image_base64) values('" + values[0] + "','" + values[1] + "'," + values[2] + "," + values[3] + "," + values[4] +",'" + values[5] + "')")
+    database.customCommandInsert(database, "insert into offers(title, text, user_id, address_id, offer_type_id) values('" + values[0] + "','" + values[1] + "'," + values[2] + "," + values[3] + "," + values[4] + ")")
     sqlresult = database.customCommand(database, 'select offer_id from offers order by offer_id DESC LIMIT 1')
+
+    path = f'/var/www/html/pictures/inserate/{sqlresult[0][0]}.png'
+
+    base64string = values[5]
+    cuttedshit = base64string.split(',')
+    print(cuttedshit[0])
+    imgdata = base64.b64decode(cuttedshit[1])
+    
+
+    with open(path, 'wb') as writer:
+        writer.write(imgdata)
+        writer.close()
 
     return jsonify({"result" : sqlresult[0]})
 
@@ -115,7 +128,7 @@ def getinserate():
     result = []
 
     for type in sqlresult:
-        result+={"id": type[0], "title": type[1], 'text': type[2], 'image_base64': type[6]},
+        result+={"id": type[0], "title": type[1], 'text': type[2]},
 
     return jsonify(result)
 
