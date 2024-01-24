@@ -54,7 +54,8 @@ function HandleResponse(data){
 
         var cardPic = document.createElement('img');
         cardPic.src = 'http://194.62.1.218/pictures/inserate/'+data.id+'.png';
-        cardPic.classname = 'card-img-top';
+        cardPic.classname = 'card-img-top img-fluid';
+        cardPic.style = "max-height: 400px;";
 
         var cardButton = document.createElement('a');
         cardButton.className = 'btn btn-primary stretched-link mt-auto';
