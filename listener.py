@@ -79,7 +79,7 @@ def select():
 @app.route('/getoffertypes', methods=['GET'])
 def getoffertypes():
 
-    sqlresult = database.customCommand(database, 'select * from offer_types')
+    sqlresult = database.customCommand(database, 'select * from offer_types order by offer_type_id')
 
     result = []
 
@@ -134,7 +134,7 @@ def getmainaddressid():
 
     return jsonify(sqresult[0])
 
-@app.route('/getaddresses', methods=['GET'])
+@app.route('/getaddresses', methods=['POST'])
 def getaddresses():
     data = request.json
     values=[
@@ -146,7 +146,7 @@ def getaddresses():
     result = []
 
     for type in sqlresult:
-        result+={"id": type[0], "value": type[2] + type[3]+ type[6] + type[4]},
+        result+={"id": type[0], "value": str(type[2]) + " " + str(type[3])+ ", " + str(type[6]) + " " + str(type[4])},
 
     return jsonify(result)
 
